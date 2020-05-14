@@ -81,19 +81,43 @@ final class Loader {
 
 			$class = 'Model' . preg_replace('/[^a-zA-Z0-9]/', '', $route);
 
+
 			if (is_file($file)) {
+
+
 				include_once($file);
 
-				$proxy = new Proxy();
+
+				// //borrar
+				// if($class=='Modelcatalogproduct'){
+				// 	echo json_encode(get_class_methods($class)); 
+
+				// 	$class = new ReflectionClass($class);
+				// 	$methods = $class->getMethods(ReflectionMethod::IS_PUBLIC);
+				// 	var_dump($methods);
+
+				// }
+				//borrar
+
+
 
 				// Overriding models is a little harder so we have to use PHP's magic methods
 				// In future version we can use runkit
+				
+			
+				$proxy = new Proxy();
+
+
 				foreach (get_class_methods($class) as $method) {
+
 					$proxy->{$method} = $this->callback($route . '/' . $method);
+					
 				}
 
 				$this->registry->set('model_' . str_replace('/', '_', (string)$route), $proxy);
 			} else {
+
+		
 				throw new \Exception('Error: Could not load model ' . $route . '!');
 			}
 		}
@@ -265,8 +289,12 @@ final class Loader {
 
 				$callable = array($object, $method);
 
+				
+
+
 				if (is_callable($callable)) {
 					$output = call_user_func_array($callable, $args);
+
 				} else {
 					throw new \Exception('Error: Could not call model/' . $route . '!');
 				}

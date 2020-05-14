@@ -5,6 +5,7 @@ class ControllerCatalogProduct extends Controller {
 	public function index() {
 		$this->load->language('catalog/product');
 
+	
 		$this->document->setTitle($this->language->get('heading_title'));
 
 		$this->load->model('catalog/product');
@@ -20,6 +21,7 @@ class ControllerCatalogProduct extends Controller {
 		$this->load->model('catalog/product');
 
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
+			
 			if (!isset($this->request->get['master_id'])) {
 				// Normal product add
 				$this->model_catalog_product->addProduct($this->request->post);

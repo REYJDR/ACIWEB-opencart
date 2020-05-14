@@ -8,6 +8,7 @@ class ControllerApiOrder extends Controller {
 		if (!isset($this->session->data['api_id'])) {
 			$json['error'] = $this->language->get('error_permission');
 		} else {
+			
 			// Customer
 			if (!isset($this->session->data['customer'])) {
 				$json['error'] = $this->language->get('error_customer');

@@ -1,0 +1,256 @@
+2020-05-13 17:40:07 - Error:  Class 'Controllerapikoddika' not found in /home/vagrant/code/opencart/upload/system/engine/action.php on line 73
+2020-05-13 17:40:25 - Exception:  Error: Could not load model api/koddika! in /home/vagrant/code/opencart/upload/system/engine/loader.php on line 121
+2020-05-13 17:40:50 - Exception:  Error: Could not load model custom/koddika! in /home/vagrant/code/opencart/upload/system/engine/loader.php on line 121
+2020-05-13 17:41:15 - PHP Warning:  Invalid argument supplied for foreach() in /home/vagrant/code/opencart/upload/system/engine/loader.php on line 111
+2020-05-13 17:41:15 - Error:  Call to a member function addProduct() on null in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika.php on line 23
+2020-05-13 17:43:14 - PHP Warning:  Invalid argument supplied for foreach() in /home/vagrant/code/opencart/upload/system/engine/loader.php on line 111
+2020-05-13 17:44:47 - PHP Notice:  Undefined index: master_id in /home/vagrant/code/opencart/upload/catalog/model/custom/koddika.php on line 8
+2020-05-13 17:44:47 - PHP Notice:  Undefined index: model in /home/vagrant/code/opencart/upload/catalog/model/custom/koddika.php on line 8
+2020-05-13 17:44:47 - PHP Notice:  Undefined index: sku in /home/vagrant/code/opencart/upload/catalog/model/custom/koddika.php on line 8
+2020-05-13 17:44:47 - PHP Notice:  Undefined index: upc in /home/vagrant/code/opencart/upload/catalog/model/custom/koddika.php on line 8
+2020-05-13 17:44:47 - PHP Notice:  Undefined index: ean in /home/vagrant/code/opencart/upload/catalog/model/custom/koddika.php on line 8
+2020-05-13 17:44:47 - PHP Notice:  Undefined index: jan in /home/vagrant/code/opencart/upload/catalog/model/custom/koddika.php on line 8
+2020-05-13 17:44:47 - PHP Notice:  Undefined index: isbn in /home/vagrant/code/opencart/upload/catalog/model/custom/koddika.php on line 8
+2020-05-13 17:44:47 - PHP Notice:  Undefined index: mpn in /home/vagrant/code/opencart/upload/catalog/model/custom/koddika.php on line 8
+2020-05-13 17:44:47 - PHP Notice:  Undefined index: location in /home/vagrant/code/opencart/upload/catalog/model/custom/koddika.php on line 8
+2020-05-13 17:44:47 - PHP Notice:  Undefined index: quantity in /home/vagrant/code/opencart/upload/catalog/model/custom/koddika.php on line 8
+2020-05-13 17:44:47 - PHP Notice:  Undefined index: minimum in /home/vagrant/code/opencart/upload/catalog/model/custom/koddika.php on line 8
+2020-05-13 17:44:47 - PHP Notice:  Undefined index: subtract in /home/vagrant/code/opencart/upload/catalog/model/custom/koddika.php on line 8
+2020-05-13 17:44:47 - PHP Notice:  Undefined index: stock_status_id in /home/vagrant/code/opencart/upload/catalog/model/custom/koddika.php on line 8
+2020-05-13 17:44:47 - PHP Notice:  Undefined index: date_available in /home/vagrant/code/opencart/upload/catalog/model/custom/koddika.php on line 8
+2020-05-13 17:44:47 - PHP Notice:  Undefined index: manufacturer_id in /home/vagrant/code/opencart/upload/catalog/model/custom/koddika.php on line 8
+2020-05-13 17:44:47 - PHP Notice:  Undefined index: shipping in /home/vagrant/code/opencart/upload/catalog/model/custom/koddika.php on line 8
+2020-05-13 17:44:47 - PHP Notice:  Undefined index: price in /home/vagrant/code/opencart/upload/catalog/model/custom/koddika.php on line 8
+2020-05-13 17:44:47 - PHP Notice:  Undefined index: points in /home/vagrant/code/opencart/upload/catalog/model/custom/koddika.php on line 8
+2020-05-13 17:44:47 - PHP Notice:  Undefined index: weight in /home/vagrant/code/opencart/upload/catalog/model/custom/koddika.php on line 8
+2020-05-13 17:44:47 - PHP Notice:  Undefined index: weight_class_id in /home/vagrant/code/opencart/upload/catalog/model/custom/koddika.php on line 8
+2020-05-13 17:44:47 - PHP Notice:  Undefined index: length in /home/vagrant/code/opencart/upload/catalog/model/custom/koddika.php on line 8
+2020-05-13 17:44:47 - PHP Notice:  Undefined index: width in /home/vagrant/code/opencart/upload/catalog/model/custom/koddika.php on line 8
+2020-05-13 17:44:47 - PHP Notice:  Undefined index: height in /home/vagrant/code/opencart/upload/catalog/model/custom/koddika.php on line 8
+2020-05-13 17:44:47 - PHP Notice:  Undefined index: length_class_id in /home/vagrant/code/opencart/upload/catalog/model/custom/koddika.php on line 8
+2020-05-13 17:44:47 - PHP Notice:  Undefined index: status in /home/vagrant/code/opencart/upload/catalog/model/custom/koddika.php on line 8
+2020-05-13 17:44:47 - PHP Notice:  Undefined index: tax_class_id in /home/vagrant/code/opencart/upload/catalog/model/custom/koddika.php on line 8
+2020-05-13 17:44:47 - PHP Notice:  Undefined index: sort_order in /home/vagrant/code/opencart/upload/catalog/model/custom/koddika.php on line 8
+2020-05-13 17:44:47 - PHP Notice:  Undefined index: image in /home/vagrant/code/opencart/upload/catalog/model/custom/koddika.php on line 12
+2020-05-13 17:44:47 - PHP Notice:  Undefined index: product_description in /home/vagrant/code/opencart/upload/catalog/model/custom/koddika.php on line 17
+2020-05-13 17:44:47 - PHP Warning:  Invalid argument supplied for foreach() in /home/vagrant/code/opencart/upload/catalog/model/custom/koddika.php on line 17
+2020-05-13 17:55:00 - ParseError:  syntax error, unexpected 'catch' (T_CATCH), expecting function (T_FUNCTION) or const (T_CONST) in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 163
+2020-05-13 17:55:40 - ParseError:  syntax error, unexpected 'catch' (T_CATCH), expecting function (T_FUNCTION) or const (T_CONST) in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 163
+2020-05-13 17:56:19 - ParseError:  syntax error, unexpected end of file, expecting function (T_FUNCTION) or const (T_CONST) in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 169
+2020-05-13 17:56:22 - ParseError:  syntax error, unexpected end of file, expecting function (T_FUNCTION) or const (T_CONST) in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 169
+2020-05-13 17:56:46 - Error:  Class 'upload\catalog\model\api\Model' not found in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 7
+2020-05-13 17:59:26 - Error:  Class 'Upload\Catalog\Model\api\Model' not found in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 7
+2020-05-13 17:59:55 - Error:  Class 'Model\api\Model' not found in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 7
+2020-05-13 18:00:25 - Error:  Class 'api\Model' not found in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 7
+2020-05-13 18:01:45 - PHP Warning:  include_once(response_message): failed to open stream: No such file or directory in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 3
+2020-05-13 18:01:45 - PHP Warning:  include_once(): Failed opening 'response_message' for inclusion (include_path='.:/usr/share/php') in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 3
+2020-05-13 18:03:22 - Error:  Class 'ModelApiProducts\Model' not found in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 5
+2020-05-13 18:06:35 - PHP Notice:  Undefined index: master_id in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:06:35 - PHP Notice:  Undefined index: model in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:06:35 - PHP Notice:  Undefined index: sku in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:06:35 - PHP Notice:  Undefined index: upc in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:06:35 - PHP Notice:  Undefined index: ean in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:06:35 - PHP Notice:  Undefined index: jan in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:06:35 - PHP Notice:  Undefined index: isbn in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:06:35 - PHP Notice:  Undefined index: mpn in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:06:35 - PHP Notice:  Undefined index: location in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:06:35 - PHP Notice:  Undefined index: quantity in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:06:35 - PHP Notice:  Undefined index: minimum in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:06:35 - PHP Notice:  Undefined index: subtract in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:06:35 - PHP Notice:  Undefined index: stock_status_id in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:06:35 - PHP Notice:  Undefined index: date_available in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:06:35 - PHP Notice:  Undefined index: manufacturer_id in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:06:35 - PHP Notice:  Undefined index: shipping in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:06:35 - PHP Notice:  Undefined index: price in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:06:35 - PHP Notice:  Undefined index: points in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:06:35 - PHP Notice:  Undefined index: weight in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:06:35 - PHP Notice:  Undefined index: weight_class_id in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:06:35 - PHP Notice:  Undefined index: length in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:06:35 - PHP Notice:  Undefined index: width in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:06:35 - PHP Notice:  Undefined index: height in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:06:35 - PHP Notice:  Undefined index: length_class_id in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:06:35 - PHP Notice:  Undefined index: status in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:06:35 - PHP Notice:  Undefined index: tax_class_id in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:06:35 - PHP Notice:  Undefined index: sort_order in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:06:35 - PHP Notice:  Undefined index: image in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 16
+2020-05-13 18:06:35 - PHP Notice:  Undefined index: product_description in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 21
+2020-05-13 18:06:35 - PHP Warning:  Invalid argument supplied for foreach() in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 21
+2020-05-13 18:10:23 - PHP Warning:  include_once(/home/vagrant/code/opencart/upload/catalog/api/koddika/response_message.php): failed to open stream: No such file or directory in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/products.php on line 4
+2020-05-13 18:10:23 - PHP Warning:  include_once(): Failed opening '/home/vagrant/code/opencart/upload/catalog/api/koddika/response_message.php' for inclusion (include_path='.:/usr/share/php') in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/products.php on line 4
+2020-05-13 18:10:43 - PHP Notice:  Undefined variable: file in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/products.php on line 14
+2020-05-13 18:10:57 - PHP Notice:  Undefined index: master_id in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:10:57 - PHP Notice:  Undefined index: model in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:10:57 - PHP Notice:  Undefined index: sku in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:10:57 - PHP Notice:  Undefined index: upc in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:10:57 - PHP Notice:  Undefined index: ean in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:10:57 - PHP Notice:  Undefined index: jan in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:10:57 - PHP Notice:  Undefined index: isbn in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:10:57 - PHP Notice:  Undefined index: mpn in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:10:57 - PHP Notice:  Undefined index: location in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:10:57 - PHP Notice:  Undefined index: quantity in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:10:57 - PHP Notice:  Undefined index: minimum in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:10:57 - PHP Notice:  Undefined index: subtract in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:10:57 - PHP Notice:  Undefined index: stock_status_id in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:10:57 - PHP Notice:  Undefined index: date_available in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:10:57 - PHP Notice:  Undefined index: manufacturer_id in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:10:57 - PHP Notice:  Undefined index: shipping in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:10:57 - PHP Notice:  Undefined index: price in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:10:57 - PHP Notice:  Undefined index: points in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:10:57 - PHP Notice:  Undefined index: weight in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:10:57 - PHP Notice:  Undefined index: weight_class_id in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:10:57 - PHP Notice:  Undefined index: length in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:10:57 - PHP Notice:  Undefined index: width in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:10:57 - PHP Notice:  Undefined index: height in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:10:57 - PHP Notice:  Undefined index: length_class_id in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:10:57 - PHP Notice:  Undefined index: status in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:10:57 - PHP Notice:  Undefined index: tax_class_id in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:10:57 - PHP Notice:  Undefined index: sort_order in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 12
+2020-05-13 18:10:57 - PHP Notice:  Undefined index: image in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 16
+2020-05-13 18:10:57 - PHP Notice:  Undefined index: product_description in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 21
+2020-05-13 18:10:57 - PHP Warning:  Invalid argument supplied for foreach() in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 21
+2020-05-13 18:11:45 - ParseError:  syntax error, unexpected 'catch' (T_CATCH), expecting function (T_FUNCTION) or const (T_CONST) in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/products.php on line 61
+2020-05-13 18:12:15 - PHP Notice:  Undefined index: master_id in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 11
+2020-05-13 18:12:15 - PHP Notice:  Undefined index: model in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 11
+2020-05-13 18:12:15 - PHP Notice:  Undefined index: sku in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 11
+2020-05-13 18:12:15 - PHP Notice:  Undefined index: upc in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 11
+2020-05-13 18:12:15 - PHP Notice:  Undefined index: ean in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 11
+2020-05-13 18:12:15 - PHP Notice:  Undefined index: jan in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 11
+2020-05-13 18:12:15 - PHP Notice:  Undefined index: isbn in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 11
+2020-05-13 18:12:15 - PHP Notice:  Undefined index: mpn in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 11
+2020-05-13 18:12:15 - PHP Notice:  Undefined index: location in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 11
+2020-05-13 18:12:15 - PHP Notice:  Undefined index: quantity in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 11
+2020-05-13 18:12:15 - PHP Notice:  Undefined index: minimum in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 11
+2020-05-13 18:12:15 - PHP Notice:  Undefined index: subtract in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 11
+2020-05-13 18:12:15 - PHP Notice:  Undefined index: stock_status_id in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 11
+2020-05-13 18:12:15 - PHP Notice:  Undefined index: date_available in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 11
+2020-05-13 18:12:15 - PHP Notice:  Undefined index: manufacturer_id in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 11
+2020-05-13 18:12:15 - PHP Notice:  Undefined index: shipping in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 11
+2020-05-13 18:12:15 - PHP Notice:  Undefined index: price in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 11
+2020-05-13 18:12:15 - PHP Notice:  Undefined index: points in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 11
+2020-05-13 18:12:15 - PHP Notice:  Undefined index: weight in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 11
+2020-05-13 18:12:15 - PHP Notice:  Undefined index: weight_class_id in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 11
+2020-05-13 18:12:15 - PHP Notice:  Undefined index: length in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 11
+2020-05-13 18:12:15 - PHP Notice:  Undefined index: width in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 11
+2020-05-13 18:12:15 - PHP Notice:  Undefined index: height in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 11
+2020-05-13 18:12:15 - PHP Notice:  Undefined index: length_class_id in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 11
+2020-05-13 18:12:15 - PHP Notice:  Undefined index: status in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 11
+2020-05-13 18:12:15 - PHP Notice:  Undefined index: tax_class_id in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 11
+2020-05-13 18:12:15 - PHP Notice:  Undefined index: sort_order in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 11
+2020-05-13 18:12:15 - PHP Notice:  Undefined index: image in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 15
+2020-05-13 18:12:15 - PHP Notice:  Undefined index: product_description in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 20
+2020-05-13 18:12:15 - PHP Warning:  Invalid argument supplied for foreach() in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 20
+2020-05-13 18:17:26 - PHP Notice:  Undefined index: master_id in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 14
+2020-05-13 18:17:26 - PHP Notice:  Undefined index: model in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 14
+2020-05-13 18:17:26 - PHP Notice:  Undefined index: sku in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 14
+2020-05-13 18:17:26 - PHP Notice:  Undefined index: upc in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 14
+2020-05-13 18:17:26 - PHP Notice:  Undefined index: ean in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 14
+2020-05-13 18:17:26 - PHP Notice:  Undefined index: jan in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 14
+2020-05-13 18:17:26 - PHP Notice:  Undefined index: isbn in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 14
+2020-05-13 18:17:26 - PHP Notice:  Undefined index: mpn in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 14
+2020-05-13 18:17:26 - PHP Notice:  Undefined index: location in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 14
+2020-05-13 18:17:26 - PHP Notice:  Undefined index: quantity in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 14
+2020-05-13 18:17:26 - PHP Notice:  Undefined index: minimum in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 14
+2020-05-13 18:17:26 - PHP Notice:  Undefined index: subtract in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 14
+2020-05-13 18:17:26 - PHP Notice:  Undefined index: stock_status_id in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 14
+2020-05-13 18:17:26 - PHP Notice:  Undefined index: date_available in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 14
+2020-05-13 18:17:26 - PHP Notice:  Undefined index: manufacturer_id in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 14
+2020-05-13 18:17:26 - PHP Notice:  Undefined index: shipping in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 14
+2020-05-13 18:17:26 - PHP Notice:  Undefined index: price in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 14
+2020-05-13 18:17:26 - PHP Notice:  Undefined index: points in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 14
+2020-05-13 18:17:26 - PHP Notice:  Undefined index: weight in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 14
+2020-05-13 18:17:26 - PHP Notice:  Undefined index: weight_class_id in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 14
+2020-05-13 18:17:26 - PHP Notice:  Undefined index: length in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 14
+2020-05-13 18:17:26 - PHP Notice:  Undefined index: width in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 14
+2020-05-13 18:17:26 - PHP Notice:  Undefined index: height in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 14
+2020-05-13 18:17:26 - PHP Notice:  Undefined index: length_class_id in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 14
+2020-05-13 18:17:26 - PHP Notice:  Undefined index: status in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 14
+2020-05-13 18:17:26 - PHP Notice:  Undefined index: tax_class_id in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 14
+2020-05-13 18:17:26 - PHP Notice:  Undefined index: sort_order in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 14
+2020-05-13 18:17:26 - PHP Notice:  Undefined index: image in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 18
+2020-05-13 18:17:26 - PHP Notice:  Undefined index: product_description in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 23
+2020-05-13 18:17:26 - PHP Warning:  Invalid argument supplied for foreach() in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 23
+2020-05-13 18:20:58 - PHP Notice:  Undefined index: product_description in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 23
+2020-05-13 18:20:58 - PHP Warning:  Invalid argument supplied for foreach() in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 23
+2020-05-13 18:20:58 - PHP Warning:  Invalid argument supplied for foreach() in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 142
+2020-05-13 18:23:42 - PHP Notice:  Undefined index: product_description in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 23
+2020-05-13 18:23:42 - PHP Warning:  Invalid argument supplied for foreach() in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 23
+2020-05-13 18:23:42 - PHP Warning:  Invalid argument supplied for foreach() in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 142
+2020-05-13 18:32:38 - PHP Notice:  Undefined index: product_description in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/products.php on line 73
+2020-05-13 18:32:38 - PHP Warning:  Invalid argument supplied for foreach() in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/products.php on line 73
+2020-05-13 18:32:38 - PHP Warning:  Invalid argument supplied for foreach() in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/products.php on line 103
+2020-05-13 18:32:38 - PHP Notice:  Undefined index: product_description in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 23
+2020-05-13 18:32:38 - PHP Warning:  Invalid argument supplied for foreach() in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 23
+2020-05-13 18:32:38 - PHP Warning:  Invalid argument supplied for foreach() in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 142
+2020-05-13 18:33:25 - PHP Warning:  Invalid argument supplied for foreach() in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/products.php on line 73
+2020-05-13 18:33:25 - PHP Warning:  Invalid argument supplied for foreach() in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/products.php on line 103
+2020-05-13 18:33:25 - PHP Warning:  Invalid argument supplied for foreach() in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 23
+2020-05-13 18:33:25 - PHP Warning:  Invalid argument supplied for foreach() in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 142
+2020-05-13 18:35:00 - PHP Warning:  Invalid argument supplied for foreach() in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/products.php on line 103
+2020-05-13 18:35:00 - PHP Warning:  Invalid argument supplied for foreach() in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 142
+2020-05-13 18:40:29 - PHP Warning:  Invalid argument supplied for foreach() in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/products.php on line 77
+2020-05-13 18:40:29 - PHP Warning:  Invalid argument supplied for foreach() in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 23
+2020-05-13 18:40:51 - PHP Warning:  Invalid argument supplied for foreach() in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/products.php on line 79
+2020-05-13 18:42:16 - PHP Warning:  Invalid argument supplied for foreach() in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/products.php on line 82
+2020-05-13 18:46:00 - PHP Warning:  Invalid argument supplied for foreach() in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/products.php on line 82
+2020-05-13 18:47:17 - PHP Warning:  Invalid argument supplied for foreach() in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/products.php on line 82
+2020-05-13 18:47:59 - PHP Notice:  Undefined index: test in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/products.php on line 80
+2020-05-13 18:51:28 - PHP Warning:  Invalid argument supplied for foreach() in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/products.php on line 82
+2020-05-13 18:51:55 - PHP Warning:  Invalid argument supplied for foreach() in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/products.php on line 82
+2020-05-13 20:18:36 - PHP Warning:  set_error_handler() expects the argument (customError) to be a valid callback in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/response_message.php on line 3
+2020-05-13 20:19:27 - ParseError:  syntax error, unexpected 'set_error_handler' (T_STRING), expecting function (T_FUNCTION) or const (T_CONST) in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/response_message.php on line 6
+2020-05-13 20:19:51 - ParseError:  syntax error, unexpected 'customError' (T_STRING), expecting function (T_FUNCTION) or const (T_CONST) in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/response_message.php on line 9
+2020-05-13 20:20:08 - PHP Warning:  set_error_handler() expects the argument (customError) to be a valid callback in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/response_message.php on line 3
+2020-05-13 20:23:08 - PHP Warning:  set_error_handler() expects the argument (customError) to be a valid callback in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/response_message.php on line 3
+2020-05-13 20:24:04 - ParseError:  syntax error, unexpected 'set_error_handler' (T_STRING), expecting function (T_FUNCTION) or const (T_CONST) in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/products.php on line 154
+2020-05-13 20:24:18 - ParseError:  syntax error, unexpected 'set_error_handler' (T_STRING), expecting function (T_FUNCTION) or const (T_CONST) in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/products.php on line 152
+2020-05-13 20:24:32 - ParseError:  syntax error, unexpected 'set_error_handler' (T_STRING), expecting function (T_FUNCTION) or const (T_CONST) in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/products.php on line 152
+2020-05-13 20:24:52 - ParseError:  syntax error, unexpected 'set_error_handler' (T_STRING), expecting function (T_FUNCTION) or const (T_CONST) in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/products.php on line 152
+2020-05-13 20:28:24 - ParseError:  syntax error, unexpected 'set_error_handler' (T_STRING), expecting function (T_FUNCTION) or const (T_CONST) in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/products.php on line 152
+2020-05-13 20:28:55 - ParseError:  syntax error, unexpected 'set_error_handler' (T_STRING), expecting function (T_FUNCTION) or const (T_CONST) in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/products.php on line 152
+2020-05-13 20:29:49 - ParseError:  syntax error, unexpected 'set_error_handler' (T_STRING), expecting function (T_FUNCTION) or const (T_CONST) in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/products.php on line 152
+2020-05-13 20:34:22 - PHP Warning:  set_error_handler() expects the argument (ErrorHandling::bbmNotice) to be a valid callback in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/ExceptionsHandler.php on line 21
+2020-05-13 20:46:53 - PHP Warning:  set_error_handler() expects the argument (anyError) to be a valid callback in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/ExceptionsHandler.php on line 3
+2020-05-13 20:47:12 - ParseError:  syntax error, unexpected ',' in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/ExceptionsHandler.php on line 3
+2020-05-13 20:47:26 - ParseError:  syntax error, unexpected ',' in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/ExceptionsHandler.php on line 3
+2020-05-13 20:47:42 - PHP Warning:  set_error_handler() expects the argument (Action::anyError) to be a valid callback in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/ExceptionsHandler.php on line 3
+2020-05-13 20:48:23 - ParseError:  syntax error, unexpected 'set_error_handler' (T_STRING), expecting function (T_FUNCTION) or const (T_CONST) in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/ExceptionsHandler.php on line 6
+2020-05-13 20:48:34 - PHP Warning:  set_error_handler() expects the argument (Action::anyError) to be a valid callback in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/ExceptionsHandler.php on line 3
+2020-05-13 20:48:59 - PHP Warning:  set_error_handler() expects the argument (Action::anyError) to be a valid callback in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/ExceptionsHandler.php on line 3
+2020-05-13 20:55:10 - PHP Unknown:  Non-static method ExceptionsHandler::anyError() should not be called statically in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/ExceptionsHandler.php on line 10
+2020-05-13 20:55:33 - Error:  Call to a member function get() on null in /home/vagrant/code/opencart/upload/system/engine/controller.php on line 34
+2020-05-13 20:55:59 - Error:  Call to a member function get() on null in /home/vagrant/code/opencart/upload/system/engine/controller.php on line 34
+2020-05-13 20:58:25 - Error:  Call to a member function get() on null in /home/vagrant/code/opencart/upload/system/engine/controller.php on line 34
+2020-05-13 20:59:15 - Error:  Call to a member function get() on null in /home/vagrant/code/opencart/upload/system/engine/controller.php on line 34
+2020-05-13 20:59:35 - Error:  Call to a member function get() on null in /home/vagrant/code/opencart/upload/system/engine/controller.php on line 34
+2020-05-13 20:59:54 - Error:  Call to a member function get() on null in /home/vagrant/code/opencart/upload/system/engine/controller.php on line 34
+2020-05-13 21:00:03 - Error:  Call to a member function get() on null in /home/vagrant/code/opencart/upload/system/engine/controller.php on line 34
+2020-05-13 21:00:12 - Error:  Call to a member function get() on null in /home/vagrant/code/opencart/upload/system/engine/controller.php on line 34
+2020-05-13 21:00:41 - Error:  Call to a member function get() on null in /home/vagrant/code/opencart/upload/system/engine/controller.php on line 34
+2020-05-13 21:01:08 - Error:  Call to a member function get() on null in /home/vagrant/code/opencart/upload/system/engine/controller.php on line 34
+2020-05-13 21:02:44 - Error:  Call to a member function get() on null in /home/vagrant/code/opencart/upload/system/engine/controller.php on line 34
+2020-05-13 21:03:02 - Error:  Call to a member function get() on null in /home/vagrant/code/opencart/upload/system/engine/controller.php on line 34
+2020-05-13 21:06:05 - Error:  Call to a member function get() on null in /home/vagrant/code/opencart/upload/system/engine/controller.php on line 34
+2020-05-13 21:06:42 - Error:  Call to a member function get() on null in /home/vagrant/code/opencart/upload/system/engine/controller.php on line 34
+2020-05-13 21:06:50 - Error:  Call to a member function get() on null in /home/vagrant/code/opencart/upload/system/engine/controller.php on line 34
+2020-05-13 21:07:06 - Error:  Call to a member function get() on null in /home/vagrant/code/opencart/upload/system/engine/controller.php on line 34
+2020-05-13 21:07:24 - Error:  Call to a member function get() on null in /home/vagrant/code/opencart/upload/system/engine/controller.php on line 34
+2020-05-13 21:07:35 - Error:  Call to a member function get() on null in /home/vagrant/code/opencart/upload/system/engine/controller.php on line 34
+2020-05-13 21:12:23 - Exception:  - in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/ExceptionsHandler.php on line 17
+2020-05-13 21:12:46 - Exception:  2- in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/ExceptionsHandler.php on line 17
+2020-05-13 21:16:25 - Error:  Wrong parameters for Exception([string $message [, long $code [, Throwable $previous = NULL]]]) in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/ExceptionsHandler.php on line 23
+2020-05-13 21:19:02 - Error:  Call to undefined method ModelApiProducts::ConsultResponse() in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 157
+2020-05-13 21:22:00 - Exception:  [2][/home/vagrant/code/opencart/upload/catalog/controller/api/koddika/ExceptionsHandler.php][34][Cannot modify header information - headers already sent by (output started at /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/ExceptionsHandler.php:17)][Array] in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/ExceptionsHandler.php on line 17
+2020-05-13 21:27:36 - Exception:  [2][/home/vagrant/code/opencart/upload/catalog/controller/api/koddika/ExceptionsHandler.php][41][Cannot modify header information - headers already sent by (output started at /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/ExceptionsHandler.php:19)][[400/[[2][/home/vagrant/code/opencart/upload/catalog/controller/api/koddika/ExceptionsHandler.php][41][Cannot modify header information - headers already sent by (output started at /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/ExceptionsHandler.php:19)][[400/[[2][/home/vagrant/code/opencart/upload/catalog/model/api/products.php][23][Invalid argument supplied for foreach()][[Array/[67/]]/[1/[Bad Request/[Array/[HTTP/1.1 400 Bad Request/]]/[1/[Bad Request/[Array/[HTTP/1.1 400 Bad Request/]] in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/ExceptionsHandler.php on line 24
+2020-05-13 21:31:31 - PHP Warning:  Invalid argument supplied for foreach() in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/products.php on line 69
+2020-05-13 21:31:31 - PHP Notice:  Undefined index: product_seo_url in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/products.php on line 95
+2020-05-13 21:31:31 - PHP Warning:  Invalid argument supplied for foreach() in /home/vagrant/code/opencart/upload/catalog/model/api/products.php on line 23
+2020-05-13 22:36:31 - ParseError:  syntax error, unexpected 'foreach' (T_FOREACH) in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/products.php on line 58
+2020-05-13 22:39:06 - ParseError:  syntax error, unexpected 'foreach' (T_FOREACH) in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/products.php on line 65
+2020-05-13 22:50:53 - ParseError:  syntax error, unexpected '$this' (T_VARIABLE) in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/products.php on line 65
+2020-05-13 23:51:27 - ParseError:  syntax error, unexpected ';', expecting ')' in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/products.php on line 64
+2020-05-14 14:15:54 - ParseError:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting '-' or identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/products.php on line 114
+2020-05-14 15:08:05 - ParseError:  syntax error, unexpected '}' in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/products.php on line 39
+2020-05-14 15:08:15 - ParseError:  syntax error, unexpected 'else' (T_ELSE) in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/products.php on line 54
+2020-05-14 15:08:40 - ParseError:  syntax error, unexpected '1' (T_LNUMBER), expecting :: (T_PAAMAYIM_NEKUDOTAYIM) in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/products.php on line 110
+2020-05-14 15:09:33 - ParseError:  syntax error, unexpected '!=' (T_IS_NOT_EQUAL), expecting :: (T_PAAMAYIM_NEKUDOTAYIM) in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/products.php on line 110
+2020-05-14 15:09:54 - ParseError:  syntax error, unexpected '!=' (T_IS_NOT_EQUAL), expecting :: (T_PAAMAYIM_NEKUDOTAYIM) in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/products.php on line 110

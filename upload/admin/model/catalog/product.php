@@ -1,6 +1,10 @@
 <?php
 class ModelCatalogProduct extends Model {
+	
+	
 	public function addProduct($data) {
+
+
 		$this->db->query("INSERT INTO " . DB_PREFIX . "product SET master_id = '" . (int)$data['master_id'] . "', model = '" . $this->db->escape((string)$data['model']) . "', sku = '" . $this->db->escape((string)$data['sku']) . "', upc = '" . $this->db->escape((string)$data['upc']) . "', ean = '" . $this->db->escape((string)$data['ean']) . "', jan = '" . $this->db->escape((string)$data['jan']) . "', isbn = '" . $this->db->escape((string)$data['isbn']) . "', mpn = '" . $this->db->escape((string)$data['mpn']) . "', location = '" . $this->db->escape((string)$data['location']) . "', variant = '" . $this->db->escape(!empty($data['variant']) ? json_encode($data['variant']) : '') . "', override = '" . $this->db->escape(!empty($data['override']) ? json_encode($data['override']) : '') . "', quantity = '" . (int)$data['quantity'] . "', minimum = '" . (int)$data['minimum'] . "', subtract = '" . (int)$data['subtract'] . "', stock_status_id = '" . (int)$data['stock_status_id'] . "', date_available = '" . $this->db->escape((string)$data['date_available']) . "', manufacturer_id = '" . (int)$data['manufacturer_id'] . "', shipping = '" . (int)$data['shipping'] . "', price = '" . (float)$data['price'] . "', points = '" . (int)$data['points'] . "', weight = '" . (float)$data['weight'] . "', weight_class_id = '" . (int)$data['weight_class_id'] . "', length = '" . (float)$data['length'] . "', width = '" . (float)$data['width'] . "', height = '" . (float)$data['height'] . "', length_class_id = '" . (int)$data['length_class_id'] . "', status = '" . (int)$data['status'] . "', tax_class_id = '" . (int)$data['tax_class_id'] . "', sort_order = '" . (int)$data['sort_order'] . "', date_added = NOW(), date_modified = NOW()");
 
 		$product_id = $this->db->getLastId();
@@ -10,12 +14,15 @@ class ModelCatalogProduct extends Model {
 		}
 
 		// Description
+		
 		foreach ($data['product_description'] as $language_id => $value) {
 			$this->db->query("INSERT INTO " . DB_PREFIX . "product_description SET product_id = '" . (int)$product_id . "', language_id = '" . (int)$language_id . "', name = '" . $this->db->escape($value['name']) . "', description = '" . $this->db->escape($value['description']) . "', tag = '" . $this->db->escape($value['tag']) . "', meta_title = '" . $this->db->escape($value['meta_title']) . "', meta_description = '" . $this->db->escape($value['meta_description']) . "', meta_keyword = '" . $this->db->escape($value['meta_keyword']) . "'");
 		}
 
 		// Categories
 		if (isset($data['product_category'])) {
+
+			
 			foreach ($data['product_category'] as $category_id) {
 				$this->db->query("INSERT INTO " . DB_PREFIX . "product_to_category SET product_id = '" . (int)$product_id . "', category_id = '" . (int)$category_id . "'");
 			}
@@ -133,7 +140,7 @@ class ModelCatalogProduct extends Model {
 					if ($keyword) {
 						$this->db->query("INSERT INTO " . DB_PREFIX . "seo_url SET store_id = '" . (int)$store_id . "', language_id = '" . (int)$language_id . "', query = 'product_id=" . (int)$product_id . "', keyword = '" . $this->db->escape($keyword) . "', push = '" . $this->db->escape('route=product/product&product_id=' . (int)$product_id) . "'");
 					}
-				}
+				}	
 			}
 		}
 
@@ -977,7 +984,6 @@ class ModelCatalogProduct extends Model {
 
 		return $query->rows;
 	}
-
 
 
 	public function getImages($product_id) {
