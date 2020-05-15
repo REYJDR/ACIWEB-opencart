@@ -52,7 +52,7 @@ class ModelApiOrders extends Model {
         
               
                 $sql = $sql.$where.$limit;
-
+echo $sql;
         
                 $order_query = $this->db->query($sql);
                 
