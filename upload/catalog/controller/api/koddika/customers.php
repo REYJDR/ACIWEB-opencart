@@ -1,19 +1,18 @@
 <?php 
 
-
 include_once(DIR_APPLICATION.'controller/api/koddika/ExceptionsHandler.php');
 
 
-class ControllerApiKoddikaProducts extends Controller {
+class ControllerApiKoddikaCustomers extends Controller {
 
     use ExceptionsHandler;
 
   
-  public function addproducts() {
+  public function addcustomer() {
 
-      $this->setUserErrorAdvice();
+    $this->setUserErrorAdvice();
 
-      try{
+    try{
         
         $this->load->language('api/koddika');
         $json = array();
@@ -28,54 +27,40 @@ class ControllerApiKoddikaProducts extends Controller {
           $json = json_decode( file_get_contents('php://input'), true); 
           $json = (array)$json;
 
-          $this->load->model('api/products');
+          $this->load->model('api/customers');
 
 
            if(count($json) > 1){
 
 
+            // foreach($json as $key => $reg){
+            //   $this->validateForm($reg,$key);
+            // }
 
-            foreach($json as $key => $reg){
-              $this->validateForm($reg,$key);
-            }
+            // foreach($json as $key => $reg){    
 
+            //   if($this->model_api_products->getProductByNameModel($reg['product_description'][1]['name'] ,$reg['model']) != null ) {
 
-            foreach($json as $key => $reg){    
+            //     $res[$key]= "Item {$reg['product_description'][1]['name']} and model {$reg['model']} already exist at id:{$key}";
 
-              if($this->model_api_products->getProductByNameModel($reg['product_description'][1]['name'] ,$reg['model']) != null ) {
+            //   }else{
 
-                $res[$key]= "Item {$reg['product_description'][1]['name']} and model {$reg['model']} already exist at id:{$key}";
-
-              }else{
-
-                $products = $this->model_api_products->addProduct($reg);
-                $res[$key]= "Item {$reg['product_description'][1]['name']} added correctly with id:{$products}";
+            //     $products = $this->model_api_products->addProduct($reg);
+            //     $res[$key]= "Item {$reg['product_description'][1]['name']} added correctly with id:{$products}";
                
-              }
-            
-
+            //   }
              
-            }
+            // }
 
              $this->ConsultResponse(200,$res,true); 
             
-
-            
-
           }else{
 
-
-              $this->validateForm($json[1]) ;
-                 
-              $products = $this->model_api_products->addProduct($json[1]);
-                
-              $this->ConsultResponse(200,"Item {$json[1]['product_description'][1]['name']} added correctly with id:{$products}",true); 
+             $this->validateForm($json[1]) ;
+            //   $products = $this->model_api_products->addProduct($json[1]);   
+            //   $this->ConsultResponse(200,"Item {$json[1]['product_description'][1]['name']} added correctly with id:{$products}",true); 
            
-
           }
-
-
-
 
         }
            
@@ -87,31 +72,31 @@ class ControllerApiKoddikaProducts extends Controller {
 
   }
 
-  public function getproducts(){
+
+  public function getcustomer(){
 
     $this->setUserErrorAdvice();
     
       try{
+
+
         $this->load->language('api/koddika');
-        
-      
-              if (!isset($this->session->data['api_id'])) {
-                  
-                $this->ConsultResponse(401,$this->language->get('error_permission'),true); ;
-      
-              } else {
-                $json = json_decode( file_get_contents('php://input'), true); 
-                $json = (array)$json;
-        
-        
-                $this->load->model('api/products');
-                $products = $this->model_api_products->getProducts($json);
-        
-                $this->ConsultResponse(200,$products,true); 
 
-              }
+        if (!isset($this->session->data['api_id'])) {
+            
+            $this->ConsultResponse(401,$this->language->get('error_permission'),true); ;
 
-       
+        } else {
+
+            $json = json_decode( file_get_contents('php://input'), true); 
+            $json = (array)$json;
+
+
+            $this->load->model('api/customers');
+            $customers = $this->model_api_customers->getCustomer($json);
+
+            $this->ConsultResponse(200,$customers,true); 
+        }
 
       }catch(Exception $ex){ // Anything that went wrong
         
@@ -181,10 +166,9 @@ class ControllerApiKoddikaProducts extends Controller {
       
       $this->ConsultResponse(400,$ex->getMessage(),true);
     }
-	}
+  }
 
-
-  public function setValidationError($valiable ,$detail, $key = '' ){
+  protected function setValidationError($valiable ,$detail, $key = '' ){
 
     $key != '' ? $keyItem = "at the item {$key}" : $keyItem = '' ;
     
@@ -192,7 +176,6 @@ class ControllerApiKoddikaProducts extends Controller {
 
 
   }
-
-
+ 
 
 }
