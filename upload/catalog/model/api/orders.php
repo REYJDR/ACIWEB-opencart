@@ -19,13 +19,22 @@ class ModelApiOrders extends Model {
                 $sql = "SELECT *, (SELECT os.name FROM `" . DB_PREFIX . "order_status` os WHERE os.order_status_id = o.order_status_id AND os.language_id = o.language_id) AS order_status FROM `" . DB_PREFIX . "order` o ";
         
                 $where = '';
+                $limit = '';
         
                 if (!empty($data['filter_order_id'])) {
-                    $where .= " AND o.order_id  = '" . (int)$data['filter_order_id'] . "'";
+
+                   // $where .= " AND o.order_id  = '" . (int)$data['filter_order_id'] . "'";
+
+                    $where == '' ? $where .= "where o.order_id  = '" . (int)$data['filter_order_id'] . "'" :  $where .= " AND o.order_id  = '" . (int)$data['filter_order_id'] . "'";
+                   
+
                 }
         
                 if (!empty($data['filter_status'])) {
-                    $where .= " AND os.id LIKE '" . $this->db->escape((int)$data['filter_status']) . "%'";
+                   
+
+                    $where == '' ? $where .= " where o.order_status_id = '" . $this->db->escape((int)$data['filter_status']) . "'" :  $where .= " AND o.order_status_id = '" . $this->db->escape((int)$data['filter_status']) . "'";
+                    
                 }
         
         
@@ -38,10 +47,11 @@ class ModelApiOrders extends Model {
                         $data['limit'] = 20;
                     }
         
-                    $where .= " LIMIT " . (int)$data['start'] . "," . (int)$data['limit'];
+                    $limit = " LIMIT " . (int)$data['start'] . "," . (int)$data['limit'];
                 }
         
-                $where != '' ?? $sql = $sql.' where '.$where;
+              
+                $sql = $sql.$where.$limit;
         
                 $order_query = $this->db->query($sql);
                 
