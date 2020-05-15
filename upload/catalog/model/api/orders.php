@@ -25,7 +25,7 @@ class ModelApiOrders extends Model {
 
                    // $where .= " AND o.order_id  = '" . (int)$data['filter_order_id'] . "'";
 
-                    $where == '' ? $where .= "where o.order_id  = '" . (int)$data['filter_order_id'] . "'" :  $where .= " AND o.order_id  = '" . (int)$data['filter_order_id'] . "'";
+                    $where == '' ? $where = "where o.order_id  = '" . (int)$data['filter_order_id'] . "'" :  $where .= " AND o.order_id  = '" . (int)$data['filter_order_id'] . "'";
                    
 
                 }
@@ -33,7 +33,7 @@ class ModelApiOrders extends Model {
                 if (!empty($data['filter_status'])) {
                    
 
-                    $where == '' ? $where .= " where o.order_status_id = '" . $this->db->escape((int)$data['filter_status']) . "'" :  $where .= " AND o.order_status_id = '" . $this->db->escape((int)$data['filter_status']) . "'";
+                    $where == '' ? $where = " where o.order_status_id = '" . $this->db->escape((int)$data['filter_status']) . "'" :  $where .= " AND o.order_status_id = '" . $this->db->escape((int)$data['filter_status']) . "'";
                     
                 }
         
@@ -53,7 +53,6 @@ class ModelApiOrders extends Model {
               
                 $sql = $sql.$where.$limit;
 
-                echo $sql;
         
                 $order_query = $this->db->query($sql);
                 
