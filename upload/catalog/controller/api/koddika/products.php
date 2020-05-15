@@ -33,6 +33,8 @@ class ControllerApiKoddikaProducts extends Controller {
 
            if(count($json) > 1){
 
+
+
             foreach($json as $key => $reg){
               $this->validateForm($reg,$key);
             }
@@ -40,8 +42,18 @@ class ControllerApiKoddikaProducts extends Controller {
 
             foreach($json as $key => $reg){    
 
-              $products = $this->model_api_products->addProduct($reg);
-              $res[$key]= "Item {$reg['product_description'][1]['name']} added correctly with id:{$products}";
+              if($this->model_api_products->getProductByNameModel($reg['product_description'][1]['name'] ,$reg['model']) != null ) {
+
+                $res[$key]= "Item <{$reg['product_description'][1]['name']}> and model <{$reg['model']}> already exist at id:{$key}";
+
+              }else{
+
+                $products = $this->model_api_products->addProduct($reg);
+                $res[$key]= "Item {$reg['product_description'][1]['name']} added correctly with id:{$products}";
+               
+              }
+            
+
              
             }
 
@@ -57,7 +69,7 @@ class ControllerApiKoddikaProducts extends Controller {
                  
               $products = $this->model_api_products->addProduct($json[1]);
                 
-              $this->ConsultResponse(200,"Item {$json[1]['product_description'][1]['name']} addded correctly with id:{$products}",true); 
+              $this->ConsultResponse(200,"Item {$json[1]['product_description'][1]['name']} added correctly with id:{$products}",true); 
            
 
           }
@@ -129,7 +141,7 @@ class ControllerApiKoddikaProducts extends Controller {
       }
 
       $key != '' ? $keyItem = "at the item {$key}" : $keyItem = '' ;
-      if($this->model_api_products->getProductByNameModel($json['product_description'][1]['name'] ,$json['model']) != null ) $this->ConsultResponse(400,"This product name <{$json['product_description'][1]['name']}> and model <{$json['model']}> already exist {$keyItem}",true); ;
+    
 
 
       if ($json['master_id']) {
@@ -166,7 +178,7 @@ class ControllerApiKoddikaProducts extends Controller {
 
     $key != '' ? $keyItem = "at the item {$key}" : $keyItem = '' ;
     
-    $this->ConsultResponse(400,"The parameters <{$valiable}> {$detail} {$keyItem}" ,true) ;
+    $this->ConsultResponse(400,"The parameters <{$valiable}> {$detail} {$keyItem}" ,false) ;
 
 
   }

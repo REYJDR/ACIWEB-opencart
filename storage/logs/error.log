@@ -254,3 +254,5 @@
 2020-05-14 15:08:40 - ParseError:  syntax error, unexpected '1' (T_LNUMBER), expecting :: (T_PAAMAYIM_NEKUDOTAYIM) in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/products.php on line 110
 2020-05-14 15:09:33 - ParseError:  syntax error, unexpected '!=' (T_IS_NOT_EQUAL), expecting :: (T_PAAMAYIM_NEKUDOTAYIM) in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/products.php on line 110
 2020-05-14 15:09:54 - ParseError:  syntax error, unexpected '!=' (T_IS_NOT_EQUAL), expecting :: (T_PAAMAYIM_NEKUDOTAYIM) in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/products.php on line 110
+2020-05-15 3:39:51 - PHP Notice:  Undefined index: username in /home/vagrant/code/opencart/upload/catalog/controller/api/login.php on line 13
+2020-05-15 3:40:21 - PHP Notice:  Undefined index: api_token in /home/vagrant/code/opencart/upload/catalog/controller/startup/startup.php on line 45

@@ -38,7 +38,7 @@ trait ExceptionsHandler {
                 echo  json_encode($response,JSON_PRETTY_PRINT);
                 die();
             }
-            return  json_encode($response,JSON_PRETTY_PRINT);
+            echo json_encode($response,JSON_PRETTY_PRINT);
     }
 
     
