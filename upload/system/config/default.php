@@ -3,8 +3,8 @@
 $_['site_url']             = '';
 
 // Language
-$_['language_directory']   = 'en-gb';
-$_['language_autoload']    = array('en-gb');
+$_['language_directory']   = 'es-es';
+$_['language_autoload']    = array('es-es');
 
 // Date
 $_['date_timezone']        = 'UTC';
