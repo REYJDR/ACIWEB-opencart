@@ -76,7 +76,10 @@ class ControllerStartupStartup extends Controller {
 
 		$languages = $this->model_localisation_language->getLanguages();
 
+
 		$language_codes = array_column($languages, 'language_id', 'code');
+
+		//var_dump($language_codes ); 
 
 		// Language Cookie
 		if (isset($this->request->cookie['language']) && array_key_exists($this->request->cookie['language'], $language_codes)) {
