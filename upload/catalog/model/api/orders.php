@@ -61,9 +61,9 @@ class ModelApiOrders extends Model {
                     $limit = " LIMIT " . (int)$data['start'] . "," . (int)$data['limit'];
                 }
         
-              
+             
                 $sql = $sql.$where.$limit;
-
+                die($sql);
         
                 $order_query = $this->db->query($sql);
                 
