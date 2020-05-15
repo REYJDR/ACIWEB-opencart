@@ -27,7 +27,7 @@ class ControllerApiKoddikaOrders extends Controller {
                 $json = json_decode( file_get_contents('php://input'), true); 
                 $json = (array)$json;
 
-var_dump($json );
+
                 $this->load->model('api/orders');
                 $orders = $this->model_api_orders->getOrders($json);
 
