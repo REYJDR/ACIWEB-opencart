@@ -44,7 +44,7 @@ class ControllerApiKoddikaProducts extends Controller {
 
               if($this->model_api_products->getProductByNameModel($reg['product_description'][1]['name'] ,$reg['model']) != null ) {
 
-                $res[$key]= "Item <{$reg['product_description'][1]['name']}> and model <{$reg['model']}> already exist at id:{$key}";
+                $res[$key]= "Item {$reg['product_description'][1]['name']} and model {$reg['model']} already exist at id:{$key}";
 
               }else{
 
@@ -178,7 +178,7 @@ class ControllerApiKoddikaProducts extends Controller {
 
     $key != '' ? $keyItem = "at the item {$key}" : $keyItem = '' ;
     
-    $this->ConsultResponse(400,"The parameters <{$valiable}> {$detail} {$keyItem}" ,false) ;
+    $this->ConsultResponse(400,"The parameters {$valiable} {$detail} {$keyItem}" ,false) ;
 
 
   }
