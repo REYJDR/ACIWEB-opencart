@@ -40,12 +40,10 @@ class ModelApiOrders extends Model {
                
                 if (!empty($data['filter_has_invoices'])) {
 
-                    if ($data['filter_has_invoices']== 1)   $where == '' ? $where = " where o.invoice_no <> '0' " :  $where .= " AND o.invoice_no <> '0' ";
+                    if ($data['filter_has_invoices']== "1")   $where == '' ? $where = " where o.invoice_no <> '0' " :  $where .= " AND o.invoice_no <> '0' ";
                     
-                    if ($data['filter_has_invoices']== 0)   $where == '' ? $where = " where o.invoice_no = '0' " :  $where .= " AND o.invoice_no = '0' ";
+                    if ($data['filter_has_invoices']== "0")   $where == '' ? $where = " where o.invoice_no = '0' " :  $where .= " AND o.invoice_no = '0' ";
                     
-                   
-                     
                 }
          
         
