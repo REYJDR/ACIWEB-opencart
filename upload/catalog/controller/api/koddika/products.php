@@ -42,7 +42,7 @@ class ControllerApiKoddikaProducts extends Controller {
 
             foreach($json as $key => $reg){    
 
-              if($this->model_api_products->getProductByNameModel($reg['product_description'][1]['name'] ,$reg['model']) != null ) {
+              if($this->model_api_products->getProductByNameModel($reg['product_description'][1]['name'] ,$reg['model'],$reg['store_id']) != null ) {
 
                 $res[$key]= "Item {$reg['product_description'][1]['name']} and model {$reg['model']} already exist at id:{$key}";
 
@@ -132,7 +132,7 @@ class ControllerApiKoddikaProducts extends Controller {
       if(isset($json['product_reward']) && !is_array($json['product_reward']))           $this->setValidationError('product_reward', 'is not an array', $key);
       if(isset($json['product_layout']) && !is_array($json['product_layout']))           $this->setValidationError('product_layout', 'is not an array', $key);
       if(!isset($json['model']) || $json['model']=='')                                   $this->setValidationError('model', 'is mandatory', $key);
-      if(!isset($json['product_store']) || empty($json['product_store']))                $this->setValidationError('product_store', 'is mandatory', $key);
+      if(!isset($json['store_id']) || empty($json['store_id']))                $this->setValidationError('store_id', 'is mandatory', $key);
       
 
       foreach ($json['product_description'] as $language_id => $value) {
