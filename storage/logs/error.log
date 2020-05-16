@@ -258,3 +258,5 @@
 2020-05-15 3:40:21 - PHP Notice:  Undefined index: api_token in /home/vagrant/code/opencart/upload/catalog/controller/startup/startup.php on line 45
 2020-05-15 15:52:46 - ParseError:  syntax error, unexpected 'else' (T_ELSE) in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/customers.php on line 64
 2020-05-15 16:55:40 - Error:  Class 'Controllerapikoddikaorders' not found in /home/vagrant/code/opencart/upload/system/engine/action.php on line 73
+2020-05-16 19:32:38 - ParseError:  syntax error, unexpected '}' in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/products.php on line 43
+2020-05-16 19:33:03 - ParseError:  syntax error, unexpected '$this' (T_VARIABLE) in /home/vagrant/code/opencart/upload/catalog/controller/api/koddika/products.php on line 45

@@ -33,27 +33,35 @@ class ControllerApiKoddikaProducts extends Controller {
 
            if(count($json) > 1){
 
-
+            $error = [];
 
             foreach($json as $key => $reg){
-              $this->validateForm($reg,$key);
+
+              $errorMsg =  $this->validateForm($reg,$key);
+
+              if($errorMsg != '') $error[$key] = $errorMsg;
+             
             }
 
+        
 
             foreach($json as $key => $reg){    
 
-              if($this->model_api_products->getProductByNameModel($reg['product_description'][1]['name'] ,$reg['model'],$reg['store_id']) != null ) {
+              
+              if(!empty($error) && isset($error[$key])) $res[$key]= "{$error[$key]}";  else {  
 
-                $res[$key]= "Item {$reg['product_description'][1]['name']} and model {$reg['model']} already exist at id:{$key}";
+                if($this->model_api_products->getProductByNameModel($reg['product_description'][1]['name'] ,$reg['model'],$reg['store_id']) != null ) {
 
-              }else{
+                  $res[$key]= "Item {$reg['product_description'][1]['name']} and model {$reg['model']} already exist at id:{$key}";
 
-                $products = $this->model_api_products->addProduct($reg);
-                $res[$key]= "Item {$reg['product_description'][1]['name']} added correctly with id:{$products}";
-               
-              }
+                }else{
+
+                  $products = $this->model_api_products->addProduct($reg);
+                  $res[$key]= "Item {$reg['product_description'][1]['name']} added correctly with id:{$products}";
+                
+                }
             
-
+             }
              
             }
 
@@ -126,57 +134,34 @@ class ControllerApiKoddikaProducts extends Controller {
 
      $this->load->model('api/products');
    
-      if(isset($json['product_description']) && !is_array($json['product_description'])) $this->setValidationError('product_description', 'is not an array', $key);
-      if(!isset($json['product_description']) || empty($json['product_description']))    $this->setValidationError('product_description', 'is mandatory', $key);      
-      if(isset($json['product_store'])  && !is_array($json['product_store']))            $this->setValidationError('product_store', 'is not an array', $key);
-      if(isset($json['product_reward']) && !is_array($json['product_reward']))           $this->setValidationError('product_reward', 'is not an array', $key);
-      if(isset($json['product_layout']) && !is_array($json['product_layout']))           $this->setValidationError('product_layout', 'is not an array', $key);
-      if(!isset($json['model']) || $json['model']=='')                                   $this->setValidationError('model', 'is mandatory', $key);
-      if(!isset($json['store_id']) || empty($json['store_id']))                $this->setValidationError('store_id', 'is mandatory', $key);
+      if(isset($json['product_description']) && !is_array($json['product_description'])) return $this->setValidationError('product_description', 'is not an array', $key);
+      if(!isset($json['product_description']) || empty($json['product_description']))    return $this->setValidationError('product_description', 'is mandatory', $key);      
+      if(isset($json['product_store'])  && !is_array($json['product_store']))            return $this->setValidationError('product_store', 'is not an array', $key);
+      if(isset($json['product_reward']) && !is_array($json['product_reward']))           return $this->setValidationError('product_reward', 'is not an array', $key);
+      if(isset($json['product_layout']) && !is_array($json['product_layout']))           return $this->setValidationError('product_layout', 'is not an array', $key);
+      if(!isset($json['model']) || $json['model']=='')                                   return $this->setValidationError('model', 'is mandatory', $key);
+      if(!isset($json['store_id']) || $json['store_id'] == '' )                          return $this->setValidationError('store_id', 'is mandatory', $key);
       
 
       foreach ($json['product_description'] as $language_id => $value) {
 
-        if ((utf8_strlen(trim($value['name'])) < 1) || (utf8_strlen($value['name']) > 255)) {
-          $this->error['name'][$language_id] = $this->language->get('error_name');
-        }
-
-        if ((utf8_strlen(trim($value['meta_title'])) < 1) || (utf8_strlen($value['meta_title']) > 255)) {
-          $this->error['meta_title'][$language_id] = $this->language->get('error_meta_title');
-        }
+        if(!isset($value['name']) || $value['name']=='') return $this->setValidationError('model', 'is mandatory', $key);
+        if(!isset($value['meta_title']) || $value['name']=='') return $this->setValidationError('model', 'is mandatory', $key);
       }
 
-      if ((utf8_strlen(trim($json['model'])) < 1) || (utf8_strlen($json['model']) > 64)) {
-        $this->error['model'] = $this->language->get('error_model');
-      }
 
-      $key != '' ? $keyItem = "at the item {$key}" : $keyItem = '' ;
-    
-
-
-      if ($json['master_id']) {
+      // if ($json['master_id']) {
         
 
-        $product_options = $this->model_api_products->getOptions($json['master_id']);
+      //   $product_options = $this->model_api_products->getOptions($json['master_id']);
 
-        foreach ($product_options as $product_option) {
-          if (isset($json['override']['variant'][$product_option['product_option_id']]) && $product_option['required'] && empty($json['variant'][$product_option['product_option_id']])) {
-            $this->error['variant'][$product_option['product_option_id']] = sprintf($this->language->get('error_required'), $product_option['name']);
-          }
-        }
-      }
+      //   foreach ($product_options as $product_option) {
+      //     if (isset($json['override']['variant'][$product_option['product_option_id']]) && $product_option['required'] && empty($json['variant'][$product_option['product_option_id']])) {
+      //       $this->error['variant'][$product_option['product_option_id']] = sprintf($this->language->get('error_required'), $product_option['name']);
+      //     }
+      //   }
+      // }
 
-
-      if ($this->error && !isset($this->error['warning'])) {
-
-         $this->ConsultResponse(400,$this->error,true);
-
-        
-      }
-
-     
-      return !$this->error;
-    
     }catch(\Exception $ex){ // Anything that went wrong
       
       $this->ConsultResponse(400,$ex->getMessage(),true);
@@ -188,7 +173,9 @@ class ControllerApiKoddikaProducts extends Controller {
 
     $key != '' ? $keyItem = "at the item {$key}" : $keyItem = '' ;
     
-    $this->ConsultResponse(400,"The parameters {$valiable} {$detail} {$keyItem}" ,false) ;
+    if($key != '' ) return "The parameters {$valiable} {$detail} {$keyItem}" ;
+
+    $this->ConsultResponse(400,"The parameters {$valiable} {$detail} " , true) ;
 
 
   }
