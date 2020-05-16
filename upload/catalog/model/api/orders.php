@@ -63,13 +63,13 @@ class ModelApiOrders extends Model {
                 $order_query = $this->db->query($sql);
                 
         
-
+if ($order_query->num_rows) {
 
                    
 
 foreach ($order_query->row as $key => $row) {
 
-    if ($order_query->num_rows) {
+    
         $country_query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "country` WHERE country_id = '" . (int)$order_query->row['payment_country_id'] . "'");
 
         if ($country_query->num_rows) {
