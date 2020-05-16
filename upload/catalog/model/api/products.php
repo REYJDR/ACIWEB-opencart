@@ -166,7 +166,7 @@ class ModelApiProducts extends Model {
 	
 	public function getProductByNameModel($product_name,$product_model='',$store_id = 0) {
 		
-		$query = $this->db->query("SELECT DISTINCT * FROM `" . DB_PREFIX . "product` p LEFT JOIN `" . DB_PREFIX . "product_to_store` ps ON (ps.`product_id` = pd.`product_id`) LEFT JOIN `" . DB_PREFIX . "product_description` pd ON (p.`product_id` = pd.`product_id`) WHERE pd.`name` = '" . (string)$product_name . "' AND  p.`model` = '" . (string)$product_model . "' AND pd.`language_id` = '" . (int)$this->config->get('config_language_id') . "' and ps.sotre_id='{$store_id}'");
+		$query = $this->db->query("SELECT DISTINCT * FROM `" . DB_PREFIX . "product` p LEFT JOIN `" . DB_PREFIX . "product_to_store` ps ON (ps.`product_id` = pd.`product_id`) LEFT JOIN `" . DB_PREFIX . "product_description` pd ON (p.`product_id` = pd.`product_id`) WHERE pd.`name` = '" . (string)$product_name . "' AND  p.`model` = '" . (string)$product_model . "' AND pd.`language_id` = '" . (int)$this->config->get('config_language_id') . "' and ps.store_id='{$store_id}'");
 
 		return $query->row;
 	}
