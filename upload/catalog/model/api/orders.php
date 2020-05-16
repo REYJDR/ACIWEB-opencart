@@ -117,7 +117,7 @@ class ModelApiOrders extends Model {
                     
 
 
-
+var_dump($order_query->row); die();
 
 
 
