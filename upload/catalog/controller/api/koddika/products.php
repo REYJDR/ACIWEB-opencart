@@ -51,14 +51,14 @@ class ControllerApiKoddikaProducts extends Controller {
               
               if(!empty($error) && isset($error[$key])) $res[$key]= "{$error[$key]}";  else {  
 
-                if($this->model_api_products->getProductByNameModel($reg['product_description'][1]['name'] ,$reg['model'],$reg['store_id']) != null ) {
+                if($this->model_api_products->getProductByNameModel($reg['product_description'][2]['name'] ,$reg['model'],$reg['store_id']) != null ) {
 
-                  $res[$key]= "Item {$reg['product_description'][1]['name']} and model {$reg['model']} already exist at id:{$key}";
+                  $res[$key]= "Item {$reg['product_description'][2]['name']} and model {$reg['model']} already exist at id:{$key}";
 
                 }else{
 
                   $products = $this->model_api_products->addProduct($reg);
-                  $res[$key]= "Item {$reg['product_description'][1]['name']} added correctly with id:{$products}";
+                  $res[$key]= "Item {$reg['product_description'][2]['name']} added correctly with id:{$products}";
                 
                 }
             
@@ -78,7 +78,7 @@ class ControllerApiKoddikaProducts extends Controller {
                  
               $products = $this->model_api_products->addProduct($json[1]);
                 
-              $this->ConsultResponse(200,"Item {$json[1]['product_description'][1]['name']} added correctly with id:{$products}",true); 
+              $this->ConsultResponse(200,"Item {$json[1]['product_description'][2]['name']} added correctly with id:{$products}",true); 
            
 
           }
