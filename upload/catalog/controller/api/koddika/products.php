@@ -71,7 +71,7 @@ class ControllerApiKoddikaProducts extends Controller {
             
 
           }else{
-
+die(var_dump($json));
 
               $this->validateForm($json[1]) ;
                  

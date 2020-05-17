@@ -15,7 +15,6 @@ class ModelApiStores extends Model {
         try{
             $sql = "SELECT store_id, value FROM `". DB_PREFIX ."setting`  WHERE `key`='config_name' group by store_id";
             
-        
             $stores_query = $this->db->query($sql);
             
             return $stores_query->rows;
