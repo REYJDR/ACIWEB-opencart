@@ -18,7 +18,7 @@ class ControllerApiKoddikaProducts extends Controller {
         $this->load->language('api/koddika');
         $json = array();
      
-        die(var_dump($json));
+       
 
         if (!isset($this->session->data['api_id'])) {
 
