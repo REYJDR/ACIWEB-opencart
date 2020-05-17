@@ -31,7 +31,7 @@ class ControllerApiKoddikaProducts extends Controller {
 
           $this->load->model('api/products');
 
-
+          die(var_dump($json));
            if(count($json) > 1){
 
             $error = [];
