@@ -50,7 +50,7 @@ class ModelApiCustomers extends Model {
 
                 $query  = $this->db->query($sql);
 
-                return $query->row;
+                return $query->rows;
 
             }catch(Exception $ex){ // Anything that went wrong
                 
