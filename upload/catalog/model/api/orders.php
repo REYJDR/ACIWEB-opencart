@@ -131,8 +131,7 @@ class ModelApiOrders extends Model {
                         
                             $order[$key]['header'] = array(
                                 'order_id'                => $row['order_id'],
-                                'invoice_no'              => $row['invoice_no'],
-                                'invoice_prefix'          => $row['invoice_prefix'],
+                                'invoice_no'              => $row['invoice_prefix'].'-'.$row['invoice_no'],
                                 'store_id'                => $row['store_id'],
                                 // 'store_name'              => $row['store_name'],
                                 // 'store_url'               => $row['store_url'],
