@@ -31,7 +31,7 @@ class ControllerApiKoddikaProducts extends Controller {
 
           $this->load->model('api/products');
 
-           if(empty($json)){  $this->ConsultResponse(401,'Request is  empty ',true);
+           if(empty($json))  $this->ConsultResponse(401,'Request is  empty ',true);
            
             if(count($json) > 1){
 
