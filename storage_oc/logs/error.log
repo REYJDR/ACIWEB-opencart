@@ -1,0 +1,4 @@
+2020-05-21 23:07:45 - PHP Warning:  filesize(): stat failed for /home/vagrant/code/opencart/storage_oc/cache/cache.store.1590105939 in /home/vagrant/code/opencart/upload/system/library/cache/file.php on line 32
+2020-05-21 23:07:45 - PHP Warning:  fread(): Length parameter must be greater than 0 in /home/vagrant/code/opencart/upload/system/library/cache/file.php on line 32
+2020-05-21 23:07:48 - PHP Notice:  Trying to access array offset on value of type null in /home/vagrant/code/opencart/upload/admin/controller/marketplace/marketplace.php on line 1011
+2020-05-21 23:07:48 - PHP Notice:  Trying to access array offset on value of type null in /home/vagrant/code/opencart/upload/admin/controller/marketplace/marketplace.php on line 1013

@@ -8,11 +8,8 @@ class ModelUpgrade1006 extends Model {
 
 		$this->cache->delete('language');
 
-		// Update the template setting for v1.5.x
-		$this->db->query("UPDATE `" . DB_PREFIX . "setting` SET `key` = 'config_theme', value = 'default' WHERE `key` = 'config_template' AND `value` = 'default'");
-		
-		// update the template setting for v2.x
-		$this->db->query("UPDATE `" . DB_PREFIX . "setting` SET value = 'default' WHERE `key` = 'config_theme'");
+		// Update the template setting
+		$this->db->query("UPDATE `" . DB_PREFIX . "setting` SET `key` = 'config_theme', value = 'theme_default' WHERE `key` = 'config_template' AND `value` = 'default'");
 
 		// Update the config.php by adding a DB_PORT
 		if (is_file(DIR_OPENCART . 'config.php')) {
@@ -176,6 +173,7 @@ class ModelUpgrade1006 extends Model {
 	}
 
 	private function recursive_move($src, $dest){
+
 	    // If source is not a directory stop processing
 	    if (!is_dir($src)) return false;
 

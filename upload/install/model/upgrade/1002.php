@@ -5,7 +5,7 @@ class ModelUpgrade1002 extends Model {
 		$query = $this->db->query("SELECT setting_id FROM `" . DB_PREFIX . "setting` WHERE `key` = 'config_product_limit'");
 
 		if (!$query->num_rows) {
-			$this->db->query("INSERT INTO `" . DB_PREFIX . "setting` SET `key` = 'config_pagination', `value` = '10', `code` = 'config', `store_id` = 0");
+			$this->db->query("INSERT INTO `" . DB_PREFIX . "setting` SET `key` = 'config_product_limit', `value` = '20', `code` = 'config', `store_id` = 0");
 		}
 
 		//  setting
@@ -20,6 +20,13 @@ class ModelUpgrade1002 extends Model {
 
 		if (!$query->num_rows) {
 			$this->db->query("INSERT INTO `" . DB_PREFIX . "setting` SET `key` = 'config_voucher_max', `value` = '1000', `code` = 'config', `store_id` = 0");
+		}
+
+		// customer
+		$query = $this->db->query("SELECT * FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = '" . DB_DATABASE . "' AND TABLE_NAME = '" . DB_PREFIX . "customer' AND COLUMN_NAME = 'safe'");
+
+		if (!$query->num_rows) {
+			$this->db->query("ALTER TABLE `" . DB_PREFIX . "customer` ADD `safe` tinyint(1) NOT NULL AFTER `approved`");
 		}
 
 		// customer
@@ -51,6 +58,19 @@ class ModelUpgrade1002 extends Model {
 			}
 
 			$this->db->query("ALTER TABLE `" . DB_PREFIX . "product_option` CHANGE `option_value` `value` TEXT NOT NULL");
+		}
+
+		// category
+		$primary_data = array();
+
+		$query = $this->db->query("SHOW KEYS FROM `" . DB_PREFIX . "category` WHERE Key_name = 'PRIMARY'");
+
+		foreach ($query->rows as $result) {
+			$primary_data[] = $result['Column_name'];
+		}
+
+		if (!in_array('category_id', $primary_data) || !in_array('parent_id', $primary_data)) {
+			$this->db->query("ALTER TABLE `" . DB_PREFIX . "category` DROP PRIMARY KEY, ADD PRIMARY KEY(`category_id`, `parent_id`)");
 		}
 
 		// category
