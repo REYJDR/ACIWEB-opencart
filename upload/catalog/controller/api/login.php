@@ -7,12 +7,21 @@ class ControllerApiLogin extends Controller {
 
 		$this->load->model('account/api');
 
+
+		
+
+		
+
 		// Login with API Key
-		if(isset($this->request->post['username'])) {
-			$api_info = $this->model_account_api->login($this->request->post['username'], $this->request->post['key']);
-		} else {
-			$api_info = $this->model_account_api->login('Default', $this->request->post['key']);
-		}
+		// if(isset($this->request->post['username'])) {
+		// 	$api_info = $this->model_account_api->login($this->request->post['username'], $this->request->post['key']);
+		// } else {
+		// 	$api_info = $this->model_account_api->login('Default', $this->request->post['key']);
+		// }
+
+		//koddika adaptation
+		$api_info = $this->model_account_api->login('Default', $this->getKeyHeader());
+		
 
 		if ($api_info) {
 			// Check if IP is allowed
@@ -49,4 +58,35 @@ class ControllerApiLogin extends Controller {
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
 	}
+
+
+
+	//MODIFY BY KODDIKA
+/** 
+ * Get header Authorization
+ * */
+private function getKeyHeader(){
+	
+	$headers = null;
+	
+	if (isset($_SERVER['X_API_KEY'])) {
+		$headers = trim($_SERVER["X_API_KEY"]);
+	}
+	else if (isset($_SERVER['HTTP_X_API_KEY'])) { //Nginx or fast CGI
+		
+		$headers = trim($_SERVER["HTTP_X_API_KEY"]);
+	} elseif (function_exists('apache_request_headers')) {
+		$requestHeaders = apache_request_headers();
+		// Server-side fix for bug in old Android versions (a nice side-effect of this fix means we don't care about capitalization for Authorization)
+		$requestHeaders = array_combine(array_map('ucwords', array_keys($requestHeaders)), array_values($requestHeaders));
+		//print_r($requestHeaders);
+		if (isset($requestHeaders['X_API_KEY'])) {
+			$headers = trim($requestHeaders['X_API_KEY']);
+		}
+	}
+	return $headers;
+}
+
+//MODIFY BY KODDIKA
+
 }
