@@ -64,7 +64,7 @@ class ModelApiOrders extends Model {
         
                 $order_query = $this->db->query($sql);
                 
-        
+             
                 if ($order_query->num_rows) {
 
 
@@ -178,8 +178,8 @@ class ModelApiOrders extends Model {
                                 // 'shipping_method'         => $row['shipping_method'],
                                 // 'shipping_code'           => $row['shipping_code'],
                                 // 'comment'                 => $row['comment'],
-                                'total'                   => isset($total_query->row['value']? $total_query->row['value'] : '',
-                                'subtotal'                => isset($subtotal_query->row['value']? $subtotal_query->row['value'] : '',
+                                'total'                   => isset($total_query->row['value']) ? $total_query->row['value'] : '',
+                                'subtotal'                => isset($subtotal_query->row['value'] ) ? $subtotal_query->row['value'] : '',
                                 'tax'                     => isset($tax_query->row['value']) ? $tax_query->row['value'] : '',
                                 'order_status_id'         => $row['order_status_id'],
                                 'order_status'            => $row['order_status'],
