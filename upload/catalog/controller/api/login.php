@@ -10,8 +10,6 @@ class ControllerApiLogin extends Controller {
 
 		
 
-		
-
 		// Login with API Key
 		// if(isset($this->request->post['username'])) {
 		// 	$api_info = $this->model_account_api->login($this->request->post['username'], $this->request->post['key']);
@@ -21,7 +19,7 @@ class ControllerApiLogin extends Controller {
 
 		//koddika adaptation
 		$api_info = $this->model_account_api->login('Default', $this->getKeyHeader());
-		
+
 
 		if ($api_info) {
 			// Check if IP is allowed

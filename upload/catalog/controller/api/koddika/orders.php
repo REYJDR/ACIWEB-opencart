@@ -22,14 +22,14 @@ class ControllerApiKoddikaOrders extends Controller {
 
             } else {
 
-                
-
-                $json = json_decode( file_get_contents('php://input'), true); 
-                $json = (array)$json;
-
+            $data= array("filter_store_id" => isset($_GET['filter_store_id']) ? $_GET['filter_store_id'] : '',
+                         "filter_has_invoices"  => isset($_GET['filter_has_invoices']) ? $_GET['filter_has_invoices'] : '',
+                         "filter_status"  => isset($_GET['filter_status']) ? $_GET['filter_status'] : '' ,                      
+                         "filter_order_id"  => isset($_GET['filter_order_id']) ? $_GET['filter_order_id'] : '' ); 
+                         
 
                 $this->load->model('api/orders');
-                $orders = $this->model_api_orders->getOrders($json);
+                $orders = $this->model_api_orders->getOrders($data);
 
                 $this->ConsultResponse(200,$orders,true); 
             }

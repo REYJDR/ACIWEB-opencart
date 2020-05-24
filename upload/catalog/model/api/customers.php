@@ -14,26 +14,18 @@ class ModelApiCustomers extends Model {
         $this->setUserErrorAdvice();
         
           try{
- 
+
+                if(!isset($data['filter_store_id']) ){
+
+                    $this->ConsultResponse(400,"[The parameter filter_store_id  is mandatory]",true);
+                }
+
+
                 $sql  = "SELECT * FROM " . DB_PREFIX . "customer ";
 
-
-                if (!empty($data['filter_name'])) {
-                    $sql .= " AND name = '" . (string)$data['filter_name'] . "'";
+                if ($data['filter_store_id'] != "") {
+                    $sql .= "WHERE store_id LIKE '" . $this->db->escape((string)$data['filter_store_id']) . "%'";
                 }
-
-                if (!empty($data['filter_email'])) {
-                    $sql .= " AND email LIKE '" . $this->db->escape((string)$data['filter_email']) . "%'";
-                }
-
-                if (!empty($data['filter_group_id'])) {
-                    $sql .= " AND customer_group_id LIKE '" . $this->db->escape((int)$data['filter_group_id']) . "%'";
-                }
-
-                if (!empty($data['filter_store_id'])) {
-                    $sql .= " AND store_id LIKE '" . $this->db->escape((string)$data['filter_store_id']) . "%'";
-                }
-
 
 
                 if (isset($data['start']) || isset($data['limit'])) {
@@ -48,7 +40,10 @@ class ModelApiCustomers extends Model {
                     $sql .= " LIMIT " . (int)$data['start'] . "," . (int)$data['limit'];
                 }
 
+           
                 $query  = $this->db->query($sql);
+
+                if(count($query->rows) < 1) $this->ConsultResponse(200,'There`s no data for this request',true);
 
                 return $query->rows;
 

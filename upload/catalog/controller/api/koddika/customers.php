@@ -7,7 +7,7 @@ class ControllerApiKoddikaCustomers extends Controller {
 
     use ExceptionsHandler;
 
-  
+/*  
   public function addcustomer() {
 
     $this->setUserErrorAdvice();
@@ -17,6 +17,7 @@ class ControllerApiKoddikaCustomers extends Controller {
         $this->load->language('api/koddika');
         $json = array();
      
+    
 
         if (!isset($this->session->data['api_id'])) {
 
@@ -71,7 +72,7 @@ class ControllerApiKoddikaCustomers extends Controller {
       }
 
   }
-
+*/
 
   public function getcustomer(){
 
@@ -81,6 +82,8 @@ class ControllerApiKoddikaCustomers extends Controller {
 
 
         $this->load->language('api/koddika');
+        
+      
 
         if (!isset($this->session->data['api_id'])) {
             
@@ -88,12 +91,12 @@ class ControllerApiKoddikaCustomers extends Controller {
 
         } else {
 
-            $json = json_decode( file_get_contents('php://input'), true); 
-            $json = (array)$json;
-
+            $data= array("filter_store_id" => isset($_GET['filter_store_id']) ? $_GET['filter_store_id'] : '',
+                                  "limit"  => isset($_GET['limit']) ? $_GET['limit'] : '',
+                                  "start"  => isset($_GET['start']) ? $_GET['start'] : '' ); 
 
             $this->load->model('api/customers');
-            $customers = $this->model_api_customers->getCustomer($json);
+            $customers = $this->model_api_customers->getCustomer($data);
 
             $this->ConsultResponse(200,$customers,true); 
         }
