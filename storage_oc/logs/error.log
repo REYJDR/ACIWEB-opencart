@@ -9,3 +9,6 @@
 2020-05-22 22:58:16 - PHP Notice:  Trying to access array offset on value of type null in /home/vagrant/code/opencart/upload/catalog/controller/api/login.php on line 94
 2020-05-22 22:58:32 - PHP Notice:  Undefined variable: matches in /home/vagrant/code/opencart/upload/catalog/controller/api/login.php on line 94
 2020-05-22 22:58:32 - PHP Notice:  Trying to access array offset on value of type null in /home/vagrant/code/opencart/upload/catalog/controller/api/login.php on line 94
+2020-05-24 23:21:19 - PHP Notice:  Undefined index: key in /home/vagrant/code/opencart/upload/catalog/controller/api/login.php on line 15
+2020-05-24 23:21:51 - PHP Notice:  Undefined index: key in /home/vagrant/code/opencart/upload/catalog/controller/api/login.php on line 15
+2020-05-24 23:22:05 - PHP Notice:  Undefined index: key in /home/vagrant/code/opencart/upload/catalog/controller/api/login.php on line 15

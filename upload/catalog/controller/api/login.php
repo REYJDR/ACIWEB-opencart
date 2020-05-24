@@ -8,17 +8,12 @@ class ControllerApiLogin extends Controller {
 		$this->load->model('account/api');
 
 
-		
-
 		// Login with API Key
-		// if(isset($this->request->post['username'])) {
-		// 	$api_info = $this->model_account_api->login($this->request->post['username'], $this->request->post['key']);
-		// } else {
-		// 	$api_info = $this->model_account_api->login('Default', $this->request->post['key']);
-		// }
-
-		//koddika adaptation
-		$api_info = $this->model_account_api->login('Default', $this->getKeyHeader());
+	    if(isset($this->request->post['username'])) {
+		 	$api_info = $this->model_account_api->login($this->request->post['username'], $this->request->post['key']);
+		 } else {
+		 	$api_info = $this->model_account_api->login('Default', $this->request->post['key']);
+		 }
 
 
 		if ($api_info) {
