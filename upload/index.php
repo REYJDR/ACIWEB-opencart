@@ -1,4 +1,6 @@
 <?php
+
+
 // Version
 define('VERSION', '3.0.3.3');
 
@@ -17,3 +19,4 @@ if (!defined('DIR_APPLICATION')) {
 require_once(DIR_SYSTEM . 'startup.php');
 
 start('catalog');
+

@@ -33,7 +33,7 @@ class ControllerApiKoddikaProducts extends Controller {
 
            if(empty($json))  $this->ConsultResponse(401,'Request is  empty ',true);
            
-            if(count($json) > 1){
+           if(count($json) > 1){
 
             $error = [];
 
