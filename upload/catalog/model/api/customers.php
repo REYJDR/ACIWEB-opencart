@@ -43,7 +43,7 @@ class ModelApiCustomers extends Model {
            
                 $query  = $this->db->query($sql);
 
-                if(count($query->rows) < 1) $this->ConsultResponse(200,'There`s no data for this request',true);
+                if(count($query->rows) < 1) $this->ConsultResponse( 404,'Not found any customers!',true);
 
                 return $query->rows;
 

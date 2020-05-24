@@ -208,7 +208,7 @@ class ModelApiOrders extends Model {
                         $this->ConsultResponse(200,$order,true);
 
                 } else {
-                    $this->ConsultResponse(200,'Not found any orders!',true);
+                    $this->ConsultResponse(404,'Not found any orders!',true);
                 }
 
 
