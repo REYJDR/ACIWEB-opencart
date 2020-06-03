@@ -11,11 +11,11 @@ class ModelApiFunctionalities extends Model {
     public function getTblCol($tables) {
 
         $this->setUserErrorAdvice();
-
+ 
         try{ 
 
            
-            foreach ($tables as $table) {
+            foreach ($tables['tables'] as $table) {
 
                
                 $sql = "SHOW COLUMNS FROM " . DB_PREFIX . "{$table};";

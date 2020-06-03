@@ -25,7 +25,7 @@ class ControllerApiKoddikaFunctionalities extends Controller {
                     $json = json_decode( file_get_contents('php://input'), true); 
                     $json = (array)$json;
            
-               var_dump($json); die();
+       
                     if(empty($json))  $this->ConsultResponse(401,'Request is  empty ',true);
                     
                     $this->load->model('api/functionalities');
