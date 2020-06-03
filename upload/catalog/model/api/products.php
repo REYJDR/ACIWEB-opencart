@@ -240,4 +240,22 @@ class ModelApiProducts extends Model {
 		return $query->rows;
 	}
 
+
+
+	public function getProductTblCol() {
+		
+		$sql = "SHOW COLUMNS FROM `" . DB_PREFIX . "product`;";
+
+		
+		$query = $this->db->query($sql);
+
+		foreach ($query->rows as $key => $value) {
+		
+			$col['product'][$key] = $value['Field'] ;
+			
+		}
+
+		return $col;
+	}
+	
 }
