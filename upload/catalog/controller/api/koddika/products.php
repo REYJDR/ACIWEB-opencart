@@ -138,9 +138,9 @@ class ControllerApiKoddikaProducts extends Controller {
    
       if(isset($json['product_description']) && !is_array($json['product_description'])) return $this->setValidationError('product_description', 'is not an array', $key);
       if(!isset($json['product_description']) || empty($json['product_description']))    return $this->setValidationError('product_description', 'is mandatory', $key);      
-      if(isset($json['product_store'])  && !is_array($json['product_store']))            return $this->setValidationError('product_store', 'is not an array', $key);
-      if(isset($json['product_reward']) && !is_array($json['product_reward']))           return $this->setValidationError('product_reward', 'is not an array', $key);
-      if(isset($json['product_layout']) && !is_array($json['product_layout']))           return $this->setValidationError('product_layout', 'is not an array', $key);
+      if(isset($json['product_to_store'])  && !is_array($json['product_store']))            return $this->setValidationError('product_store', 'is not an array', $key);
+      // if(isset($json['product_reward']) && !is_array($json['product_reward']))           return $this->setValidationError('product_reward', 'is not an array', $key);
+      // if(isset($json['product_layout']) && !is_array($json['product_layout']))           return $this->setValidationError('product_layout', 'is not an array', $key);
       if(!isset($json['model']) || $json['model']=='')                                   return $this->setValidationError('model', 'is mandatory', $key);
       if(!isset($json['store_id']) || $json['store_id'] == '' )                          return $this->setValidationError('store_id', 'is mandatory', $key);
       

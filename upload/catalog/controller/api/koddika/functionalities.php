@@ -23,6 +23,8 @@ class ControllerApiKoddikaFunctionalities extends Controller {
                     } else {
 
                     $json = json_decode( file_get_contents('php://input'), true); 
+
+                    $this->ConsultResponse(200,$json,true); 
                     $json = (array)$json;
           
        
