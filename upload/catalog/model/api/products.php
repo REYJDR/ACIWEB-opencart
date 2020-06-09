@@ -10,11 +10,13 @@ class ModelApiProducts extends Model {
 
 	public function addProduct($data) {
 
-var_dump($data); die();
 
 		$this->setUserErrorAdvice();
 
 		try{
+			$ManNameID = "";
+
+
 				$this->db->query("INSERT INTO " . DB_PREFIX . "product SET  
 									model = '" . $this->db->escape((string)$data['model']) . "', 
 									sku = '" . $this->db->escape((string)$data['sku']) . "', 
@@ -32,7 +34,7 @@ var_dump($data); die();
 									manufacturer_id = '0', 
 									shipping = '" . (int)$data['shipping'] . "', 
 									price = '" . (float)$data['price'] . "', 
-									points = '" . (int)$data['points'] . "', 
+									points = '0', 
 									weight = '" . (float)$data['weight'] . "', 
 									weight_class_id = '" . (int)$data['weight_class_id'] . "', 
 									length = '" . (float)$data['length'] . "', 
@@ -65,15 +67,51 @@ var_dump($data); die();
 					 meta_keyword = '" . $this->db->escape($value['meta_keyword']) . "'");
 				}
 		
-				// Categories
-				if (isset($data['product_category'])) {
-					foreach ($data['product_category'] as $category_id) {
-						$this->db->query("INSERT INTO " . DB_PREFIX . "product_to_category SET 
-						product_id = '" . (int)$product_id . "', 
-						category_id = '" . (int)$category_id . "'");
+                //in exist manufacture name its creates a new one
+				if($data['manufacturer'] != '' || $data['manufacturer'] != NULL ){
+
+					$ManName = $this->db->query("SELECT name FROM ". DB_PREFIX ."manufacturer where name='{$data['manufacturer']}'");
+
+					if($ManName != ''){
+
+						$this->db->query("INSERT INTO  ". DB_PREFIX ."manufacturer SET name ='{$data['manufacturer']}'");
+						$ManNameID = $this->db->getLastId();
+						$this->db->query("INSERT INTO  ". DB_PREFIX ."manufacturer_to_store SET manufacturer_id ='".(int)$ManNameID."' , store_id='".(int)$data['store_id']."'");
+						$this->db->query("UPDATE ". DB_PREFIX ."product SET manufacturer_id ='".(int)$ManNameID."' WHERE product_id='" .(int)$product_id."'");
+						
+
+
+					}else{
+
+						$ManNameID = $this->db->getLastId();
 					}
 				}
-		
+
+
+				// Categories
+				// if (isset($data['product_category'])) {
+				// 	foreach ($data['product_category'] as $category_id) {
+				// 		$this->db->query("INSERT INTO " . DB_PREFIX . "product_to_category SET 
+				// 		product_id = '" . (int)$product_id . "', 
+				// 		category_id = '" . (int)$category_id . "'");
+				// 	}
+				// }
+
+
+				if (isset($data['category']) && isset($data['sub_category'])) {
+
+					if($data['sub_category'] != '' && $data['category']!= ''){
+					  
+						$catId = $this->CheckCategoryId($data['category'],$data['sub_category'],$data['store_id']);
+
+						$this->db->query("INSERT INTO   ". DB_PREFIX ."product_to_category SET category_id ='".(int)$catId."' , product_id='" .(int)$product_id."'");
+						
+					}
+				}
+
+
+
+
 				// Filters
 				if (isset($data['product_filter'])) {
 					foreach ($data['product_filter'] as $filter_id) {
@@ -155,10 +193,74 @@ var_dump($data); die();
 	
 	public function getProductByNameModel($product_name,$product_model='',$store_id = 0) {
 		
-		$query = $this->db->query("SELECT DISTINCT * FROM `" . DB_PREFIX . "product` p LEFT JOIN `" . DB_PREFIX . "product_to_store` ps ON (ps.`product_id` = p.`product_id`) LEFT JOIN `" . DB_PREFIX . "product_description` pd ON (p.`product_id` = pd.`product_id`) WHERE pd.`name` = '" . (string)$product_name . "' AND  p.`model` = '" . (string)$product_model . "' AND pd.`language_id` = '" . (int)$this->config->get('config_language_id') . "' and ps.store_id='{$store_id}'");
+		$query = $this->db->query("SELECT DISTINCT * FROM `" . DB_PREFIX . "product` p LEFT JOIN `" . DB_PREFIX . "product_to_store` ps ON (ps.`product_id` = p.`product_id`) 
+																					   LEFT JOIN `" . DB_PREFIX . "product_description` pd ON (p.`product_id` = pd.`product_id`) 
+													  WHERE pd.`name` = '" . (string)$product_name . "' 
+													  AND  p.`model` = '" . (string)$product_model . "' 
+													  AND pd.`language_id` = '" . (int)$this->config->get('config_language_id') . "' 
+													  AND ps.store_id='{$store_id}'");
 
 		return $query->row;
 	}
+
+
+
+	public function CheckCategoryId($category,$subcategory,$store_id) {
+		
+
+		$lang_id = (int)$this->config->get('config_language_id');
+
+		//check if a parent category exists, create if not 
+		$sql = "SELECT c.category_id
+					FROM oc_category  c 
+					inner join oc_category_description d on  d.category_id =  c.category_id  
+					where c.parent_id=0 and d.language_id='{$lang_id}' and  d.name = '{$category}';";
+
+		
+
+		if(empty($ParentCategoryID->row)){
+
+				$this->db->query("INSERT INTO " . DB_PREFIX . "category SET parent_id = '0', top = '0',  sort_order ='1', status = '1'");
+				
+				$ParentCategoryID = $this->db->getLastId();
+
+
+				$this->db->query("INSERT INTO " . DB_PREFIX . "category_description SET category_id = '{$ParentCategoryID}',  language_id = '{$lang_id}', name = '{$category}',description = '{$category}', meta_title = '{$category}'");
+
+				$this->db->query("INSERT INTO " . DB_PREFIX . "category_to_store SET category_id = '{$ParentCategoryID}', store_id = '{$store_id}'");
+		}
+			
+		
+
+		if($subcategory == ''){ return $ParentCategoryID; }
+
+		//check if a subcategory exist, create if not
+		$sql = "SELECT   c.category_id
+					FROM oc_category  c 
+					inner join oc_category_description d on  d.category_id =  c.category_id  
+					where c.parent_id<>0 and d.language_id='{$lang_id}' and  d.name = '{$subcategory}';";
+
+		$SubCategoryID = $this->db->query($sql);
+		
+		if(empty($SubCategoryID->row)){
+
+				$this->db->query("INSERT INTO " . DB_PREFIX . "category SET  parent_id = '{$ParentCategoryID}', top = '0',  sort_order ='1',status = '1'");
+
+				$SubCategoryID = $this->db->getLastId();
+
+				$this->db->query("INSERT INTO " . DB_PREFIX . "category_description SET  category_id = '{$SubCategoryID}', language_id = '{$lang_id}', name = '{$subcategory}', description = '{$subcategory}', meta_title = '{$subcategory}'");
+
+				$this->db->query("INSERT INTO " . DB_PREFIX . "category_to_store SET category_id = '{$SubCategoryID}', store_id = '{$store_id}'");
+			
+			
+		}
+
+
+
+
+		return $SubCategoryID;
+	}
+
 
 	public function getProducts($data = array()) {
 		$sql = "SELECT * FROM `" . DB_PREFIX . "product` p LEFT JOIN `" . DB_PREFIX . "product_description` pd ON (p.`product_id` = pd.`product_id`) WHERE pd.`language_id` = '" . (int)$this->config->get('config_language_id') . "'";

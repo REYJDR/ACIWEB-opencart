@@ -12,7 +12,7 @@ class ControllerApiKoddikaProducts extends Controller {
   public function addproducts() {
 
       $this->setUserErrorAdvice();
-
+      
       try{
         
         $this->load->language('api/koddika');
@@ -25,7 +25,7 @@ class ControllerApiKoddikaProducts extends Controller {
           $this->ConsultResponse(401,$this->language->get('error_permission'),true);
           
         } else {
-
+          
           $json = json_decode( file_get_contents('php://input'), true); 
           $json = (array)$json;
 
@@ -46,11 +46,13 @@ class ControllerApiKoddikaProducts extends Controller {
             }
 
         
-
+            
             foreach($json as $key => $reg){    
 
               
               if(!empty($error) && isset($error[$key])) $res[$key]= "{$error[$key]}";  else {  
+                
+               
 
                 if($this->model_api_products->getProductByNameModel($reg['product_description'][2]['name'] ,$reg['model'],$reg['store_id']) != null ) {
 
@@ -70,12 +72,17 @@ class ControllerApiKoddikaProducts extends Controller {
              $this->ConsultResponse(200,$res,true); 
             
 
-            
-
           }else{
 
 
               $this->validateForm($json[1]) ;
+              
+              if($this->model_api_products->getProductByNameModel($json[1]['product_description'][2]['name'] ,$json[1]['model'],$json[1]['store_id']) != null ) {
+                
+              
+                $this->ConsultResponse(400,"Item {$json[1]['product_description'][2]['name']} and model {$json[1]['model']} already exist",true); 
+                
+              }
                  
               $products = $this->model_api_products->addProduct($json[1]);
                 
