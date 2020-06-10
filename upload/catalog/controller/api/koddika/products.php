@@ -51,7 +51,6 @@ class ControllerApiKoddikaProducts extends Controller {
 
               
               if(!empty($error) && isset($error[$key])) $res[$key]= "{$error[$key]}";  else {  
-                
                
 
                 if($this->model_api_products->getProductByNameModel($reg['product_description'][2]['name'] ,$reg['model'],$reg['store_id']) != null ) {
