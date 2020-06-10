@@ -265,7 +265,7 @@ class ModelApiProducts extends Model {
 
 
 
-
+var_dump($SubCategoryID); die();
 		return $SubCategoryID;
 	}
 
