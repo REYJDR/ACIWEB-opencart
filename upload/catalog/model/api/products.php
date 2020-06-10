@@ -106,6 +106,7 @@ class ModelApiProducts extends Model {
 					  
 						$catId = $this->CheckCategoryId($data['category'],$data['sub_category'],$data['store_id']);
 
+						var_dump($catId); die();
 						$this->db->query("INSERT INTO   ". DB_PREFIX ."product_to_category SET category_id ='".(int)$catId."' , product_id='" .(int)$product_id."'");
 						
 					}
@@ -265,7 +266,7 @@ class ModelApiProducts extends Model {
 
 
 
-var_dump($SubCategoryID); die();
+
 		return $SubCategoryID;
 	}
 
