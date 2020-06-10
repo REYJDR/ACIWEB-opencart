@@ -13,7 +13,8 @@ class ControllerApiKoddikaFunctionalities extends Controller {
         $this->setUserErrorAdvice();
         
             try{
-            $this->load->language('api/koddika');
+                
+                $this->load->language('api/koddika');
             
             
                     if(!isset($this->session->data['api_id'])) {
@@ -36,8 +37,7 @@ class ControllerApiKoddikaFunctionalities extends Controller {
                 
                         $this->ConsultResponse(200,$col,true); 
                     }
-    
-            
+
     
             }catch(Exception $ex){ // Anything that went wrong
             
