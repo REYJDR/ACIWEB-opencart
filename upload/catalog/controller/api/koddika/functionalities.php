@@ -41,7 +41,8 @@ class ControllerApiKoddikaFunctionalities extends Controller {
     
             }catch(Exception $ex){ // Anything that went wrong
             
-            $this->ConsultResponse(400,$ex->getMessage(),true);
+                $this->ConsultResponse(400,$ex->getMessage(),true);
+            
             }
     
         }
