@@ -233,7 +233,7 @@ class ModelApiProducts extends Model {
 		}else{
 
 
-			$ParentCategoryID =	$ParentCategoryID->row->category_id;
+			$ParentCategoryID =	$ParentCategoryID->row['category_id'];
 		}
 		
 
@@ -260,7 +260,7 @@ class ModelApiProducts extends Model {
 			
 		}else{
 
-			$SubCategoryID->row->category_id;
+			$SubCategoryID->row['category_id'];
 		}
 
 
