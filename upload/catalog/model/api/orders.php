@@ -73,7 +73,7 @@ class ModelApiOrders extends Model {
                             //get totals 
 
                             $subtotal_query = $this->db->query("SELECT value FROM `" . DB_PREFIX . "order_total` WHERE code='sub_total' and order_id = '" . (int)$row['order_id'] . "'");
-                            $tax_query      = $this->db->query("SELECT value FROM `" . DB_PREFIX . "order_total` WHERE code='shipping'  and order_id = '" . (int)$row['order_id'] . "'");
+                            $tax_query      = $this->db->query("SELECT value FROM `" . DB_PREFIX . "order_total` WHERE code='tax'  and order_id = '" . (int)$row['order_id'] . "'");
                             $total_query    = $this->db->query("SELECT value FROM `" . DB_PREFIX . "order_total` WHERE code='total'     and order_id = '" . (int)$row['order_id'] . "'");
                             
                            
