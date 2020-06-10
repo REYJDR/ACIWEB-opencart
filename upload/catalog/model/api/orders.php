@@ -30,12 +30,12 @@ class ModelApiOrders extends Model {
 
                 }
         
-                if (!empty($data['filter_status'])) {
+              /*  if (!empty($data['filter_status'])) {
                    
 
                     $where == '' ? $where = " where o.order_status_id = '" . $this->db->escape((int)$data['filter_status']) . "'" :  $where .= " AND o.order_status_id = '" . $this->db->escape((int)$data['filter_status']) . "'";
                     
-                }
+                } */
         
                
                 if ($data['filter_has_invoices']== "1")   $where == '' ? $where = " where o.invoice_no <> '0' " :  $where .= " AND o.invoice_no <> '0' ";
