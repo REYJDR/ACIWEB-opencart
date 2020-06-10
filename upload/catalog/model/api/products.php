@@ -228,8 +228,11 @@ class ModelApiProducts extends Model {
 				$this->db->query("INSERT INTO " . DB_PREFIX . "category_description SET category_id = '{$ParentCategoryID}',  language_id = '{$lang_id}', name = '{$category}',description = '{$category}', meta_title = '{$category}'");
 
 				$this->db->query("INSERT INTO " . DB_PREFIX . "category_to_store SET category_id = '{$ParentCategoryID}', store_id = '{$store_id}'");
+		}else{
+
+
+			$ParentCategoryID =	$ParentCategoryID->row->category_id;
 		}
-			
 		
 
 		if($subcategory == ''){ return $ParentCategoryID; }
@@ -253,6 +256,9 @@ class ModelApiProducts extends Model {
 				$this->db->query("INSERT INTO " . DB_PREFIX . "category_to_store SET category_id = '{$SubCategoryID}', store_id = '{$store_id}'");
 			
 			
+		}else{
+
+			$SubCategoryID->row->category_id;
 		}
 
 
