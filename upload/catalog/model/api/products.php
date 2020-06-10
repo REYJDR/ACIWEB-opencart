@@ -70,7 +70,7 @@ class ModelApiProducts extends Model {
                 //in exist manufacture name its creates a new one
 				if($data['manufacturer'] != '' || $data['manufacturer'] != NULL ){
 
-					$ManName = $this->db->query("SELECT name FROM ". DB_PREFIX ."manufacturer where name='{$data['manufacturer']}'");
+					$ManName = $this->db->query("SELECT manufacturer_id FROM ". DB_PREFIX ."manufacturer where name='{$data['manufacturer']}'");
 
 					if($ManName != ''){
 
@@ -83,7 +83,9 @@ class ModelApiProducts extends Model {
 
 					}else{
 
-						$ManNameID = $this->db->getLastId();
+						$ManNameID = $ManName->row['manufacturer_id'];
+						$this->db->query("UPDATE ". DB_PREFIX ."product SET manufacturer_id ='".(int)$ManNameID."' WHERE product_id='" .(int)$product_id."'");
+						
 					}
 				}
 
