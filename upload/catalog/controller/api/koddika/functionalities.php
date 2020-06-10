@@ -16,26 +16,25 @@ class ControllerApiKoddikaFunctionalities extends Controller {
             $this->load->language('api/koddika');
             
             
-                    if (!isset($this->session->data['api_id'])) {
+                    if(!isset($this->session->data['api_id'])) {
                         
-                    $this->ConsultResponse(401,$this->language->get('error_permission'),true); ;
+                         $this->ConsultResponse(401,$this->language->get('error_permission'),true); ;
             
-                    } else {
+                    }else{
 
-                    $json = json_decode( file_get_contents('php://input'), true); 
+                        $json = json_decode( file_get_contents('php://input'), true); 
 
-                    $this->ConsultResponse(200,$json,true); 
-                    $json = (array)$json;
+                      //  $this->ConsultResponse(200,$json,true); 
+                        $json = (array)$json;
           
        
                     if(empty($json))  $this->ConsultResponse(401,'Request is  empty ',true);
                     
-                    $this->load->model('api/functionalities');
-                    
-                    $col = $this->model_api_functionalities->getTblCol($json);
-            
-                    $this->ConsultResponse(200,$col,true); 
-    
+                        $this->load->model('api/functionalities');
+                        
+                        $col = $this->model_api_functionalities->getTblCol($json);
+                
+                        $this->ConsultResponse(200,$col,true); 
                     }
     
             
