@@ -106,7 +106,7 @@ class ModelApiProducts extends Model {
 					  
 						$catId = $this->CheckCategoryId($data['category'],$data['sub_category'],$data['store_id']);
 
-						$this->ConsultResponse(400,$catId,true);
+						
 						$this->db->query("INSERT INTO   ". DB_PREFIX ."product_to_category SET category_id ='".(int)$catId."' , product_id='" .(int)$product_id."'");
 						
 					}
@@ -217,11 +217,11 @@ class ModelApiProducts extends Model {
 		$sql = "SELECT c.category_id
 					FROM oc_category  c 
 					inner join oc_category_description d on  d.category_id =  c.category_id  
-					where c.parent_id=0 and d.language_id='{$lang_id}' and  d.name = '{$category}';";
+					where c.parent_id=0 and d.language_id='{$lang_id}' and  d.name = '{$category}' limit 1;";
 
-		
+		$ParentCategoryID = $this->db->query($sql);
 
-		if(empty($ParentCategoryID->row)){
+		if(!isset($ParentCategoryID->row['category_id'])){
 
 				$this->db->query("INSERT INTO " . DB_PREFIX . "category SET parent_id = '0', top = '0',  sort_order ='1', status = '1'");
 				
@@ -232,8 +232,6 @@ class ModelApiProducts extends Model {
 
 				$this->db->query("INSERT INTO " . DB_PREFIX . "category_to_store SET category_id = '{$ParentCategoryID}', store_id = '{$store_id}'");
 		}else{
-
-
 			$ParentCategoryID =	$ParentCategoryID->row['category_id'];
 		}
 		
@@ -244,11 +242,11 @@ class ModelApiProducts extends Model {
 		$sql = "SELECT   c.category_id
 					FROM oc_category  c 
 					inner join oc_category_description d on  d.category_id =  c.category_id  
-					where c.parent_id<>0 and d.language_id='{$lang_id}' and  d.name = '{$subcategory}';";
+					where c.parent_id<>0 and d.language_id='{$lang_id}' and  d.name = '{$subcategory}' limit 1;";
 
 		$SubCategoryID = $this->db->query($sql);
 		
-		if(empty($SubCategoryID->row)){
+		if(!isset($SubCategoryID->row['category_id'])){
 
 				$this->db->query("INSERT INTO " . DB_PREFIX . "category SET  parent_id = '{$ParentCategoryID}', top = '0',  sort_order ='1',status = '1'");
 
@@ -261,9 +259,8 @@ class ModelApiProducts extends Model {
 			
 		}else{
 
-			$SubCategoryID->row['category_id'];
+			$SubCategoryID = $SubCategoryID->row['category_id'];
 		}
-
 
 
 
