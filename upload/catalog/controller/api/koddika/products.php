@@ -52,15 +52,20 @@ class ControllerApiKoddikaProducts extends Controller {
               
               if(!empty($error) && isset($error[$key])) $res[$key]= "{$error[$key]}";  else {  
                
+                $proId = $this->model_api_products->getProductByNameModel($reg['product_description'][2]['name'] ,$reg['model'],$reg['store_id']);
+             
+                if($proId != null ) {
 
-                if($this->model_api_products->getProductByNameModel($reg['product_description'][2]['name'] ,$reg['model'],$reg['store_id']) != null ) {
+                  $products = $this->model_api_products->updateProduct($reg,$proId);
+                  $res[$key]= "Item {$reg['product_description'][2]['name']} updated correctly with id:{$products}";
+                
 
-                  $res[$key]= "Item {$reg['product_description'][2]['name']} and model {$reg['model']} already exist at id:{$key}";
+                  //$res[$key]= "Item {$reg['product_description'][2]['name']} and model {$reg['model']} already exist at id:{$key}";
 
                 }else{
 
                   $products = $this->model_api_products->addProduct($reg);
-                  $res[$key]= "Item {$reg['product_description'][2]['name']} added correctly with id:{$products}";
+                  $res[$key]= "Item{$reg['product_description'][2]['name']} added correctly with id:{$products}";
                 
                 }
             
@@ -76,10 +81,14 @@ class ControllerApiKoddikaProducts extends Controller {
 
               $this->validateForm($json[1]) ;
               
-              if($this->model_api_products->getProductByNameModel($json[1]['product_description'][2]['name'] ,$json[1]['model'],$json[1]['store_id']) != null ) {
-                
+              $proId = $this->model_api_products->getProductByNameModel($json[1]['product_description'][2]['name'] ,$json[1]['model'],$json[1]['store_id']);
+
+              if($proId != null ) {
               
-                $this->ConsultResponse(400,"Item {$json[1]['product_description'][2]['name']} and model {$json[1]['model']} already exist",true); 
+                $products = $this->model_api_products->updateProduct($json[1],$proId);
+                $this->ConsultResponse(200,"Item {$json[1]['product_description'][2]['name']} updated correctly with id:{$products}",true); 
+              
+             //   $this->ConsultResponse(400,"Item {$json[1]['product_description'][2]['name']} and model {$json[1]['model']} already exist",true); 
                 
               }
                  

@@ -14,6 +14,7 @@ class ModelApiProducts extends Model {
 		$this->setUserErrorAdvice();
 
 		try{
+
 			$ManNameID = "";
 
 
@@ -194,19 +195,133 @@ class ModelApiProducts extends Model {
 			}
 	} 
 	
+	public function updateProduct($data,$productId) {
+		
+		
+		$this->setUserErrorAdvice();
+
+		try{
+			
+			$ManNameID = "";
+
+
+				$this->db->query("UPDATE " . DB_PREFIX . "product SET  
+									model = '" . $this->db->escape((string)$data['model']) . "', 
+									sku = '" . $this->db->escape((string)$data['sku']) . "', 
+									upc = '" . $this->db->escape((string)$data['upc']) . "', 
+									ean = '" . $this->db->escape((string)$data['ean']) . "', 
+									jan = '" . $this->db->escape((string)$data['jan']) . "', 
+									isbn = '" . $this->db->escape((string)$data['isbn']) . "', 
+									mpn = '" . $this->db->escape((string)$data['mpn']) . "', 
+									location = '" . $this->db->escape((string)$data['location']) . "',  
+									quantity = '" . (int)$data['quantity'] . "', 
+									minimum = '" .  (int)$data['minimum'] . "', 
+									subtract = '" . (int)$data['subtract'] . "', 
+									stock_status_id = '" . (int)$data['stock_status_id'] . "', 
+									shipping = '" . (int)$data['shipping'] . "', 
+									price = '" . (float)$data['price'] . "', 
+									points = '0', 
+									weight = '" . (float)$data['weight'] . "', 
+									weight_class_id = '" . (int)$data['weight_class_id'] . "', 
+									length = '" . (float)$data['length'] . "', 
+									width = '" . (float)$data['width'] . "', 
+									height = '" . (float)$data['height'] . "', 
+									length_class_id = '" . (int)$data['length_class_id'] . "', 
+									status = '" . (int)$data['status'] . "', 
+									tax_class_id = '" . (int)$data['tax_class_id'] . "', 
+									sort_order = '" . (int)$data['sort_order'] . "', 
+									date_modified = NOW() 
+									WHERE product_id='{$productId}'");
+
+				// Description
+				foreach ($data['product_description'] as $language_id => $value) {
+					$this->db->query("UPDATE " . DB_PREFIX . "product_description SET
+						language_id = '" . (int)$language_id . "', 
+						name = '" . $this->db->escape($value['name']) . "', 
+						description = '" . $this->db->escape($value['description']) . "', 
+						tag = '" . $this->db->escape($value['tag']) . "', 
+						meta_title = '" . $this->db->escape($value['meta_title']) . "', 
+						meta_description = '" . $this->db->escape($value['meta_description']) . "', 
+						meta_keyword = '" . $this->db->escape($value['meta_keyword']) . "' 
+						WHERE product_id='{$productId}'");
+				}
+		
+				//in exist manufacture name its creates a new one
+				if($data['manufacturer'] != '' || $data['manufacturer'] != NULL ){
+
+					$ManName = $this->db->query("SELECT manufacturer_id FROM ". DB_PREFIX ."manufacturer where name='{$data['manufacturer']}'");
+
+					if($ManName != ''){
+
+						$this->db->query("INSERT INTO  ". DB_PREFIX ."manufacturer SET name ='{$data['manufacturer']}'");
+						$ManNameID = $this->db->getLastId();
+						$this->db->query("INSERT INTO  ". DB_PREFIX ."manufacturer_to_store SET manufacturer_id ='".(int)$ManNameID."' , store_id='".(int)$data['store_id']."'");
+						$this->db->query("UPDATE ". DB_PREFIX ."product SET manufacturer_id ='".(int)$ManNameID."' WHERE product_id='{$productId}'");
+						
+
+
+					}else{
+
+						$ManNameID = $ManName->row['manufacturer_id'];
+						$this->db->query("UPDATE ". DB_PREFIX ."product SET manufacturer_id ='".(int)$ManNameID."' WHERE product_id='{$productId}'");
+						
+					}
+				}
+
+
+
+				if (isset($data['category']) && isset($data['sub_category'])) {
+
+					if($data['sub_category'] != '' && $data['category']!= ''){
+						
+						$catId = $this->CheckCategoryId($data['category'],$data['sub_category'],$data['store_id']);
+					
+
+						$exist = $this->db->query("SELECT category_id FROM ". DB_PREFIX ."product_to_category WHERE product_id='{$productId}' AND category_id ='".(int)$catId."' ");
+
+					
+						if($exist->num_rows <> 0 ){ 
+
+							$this->db->query("UPDATE ". DB_PREFIX ."product_to_category SET category_id ='".(int)$catId."' WHERE product_id='{$productId}'"); 
+						}else{
+
+							$this->db->query("INSERT INTO  ". DB_PREFIX ."product_to_category SET category_id ='".(int)$catId."' , product_id='{$productId}'"); 
+						}
+						
+						
+					}
+				}
+
+				// Stores
+				if (isset($data['store_id'])) {
+					$store_id= $data['store_id'];
+						$this->db->query("UPDATE " . DB_PREFIX . "product_to_store SET store_id = '" . (int)$data['store_id']."' WHERE product_id='{$productId}'");
+					
+				}
+		
+
+				$this->cache->delete('product');
+		
+				return $productId;
+
+			}catch(Exception $ex){ // Anything that went wrong
+					
+				$this->ConsultResponse(400,$ex->getMessage(),true);
+			}
+	} 
+
+
 	public function getProductByNameModel($product_name,$product_model='',$store_id = 0) {
 		
-		$query = $this->db->query("SELECT DISTINCT * FROM `" . DB_PREFIX . "product` p LEFT JOIN `" . DB_PREFIX . "product_to_store` ps ON (ps.`product_id` = p.`product_id`) 
+		$query = $this->db->query("SELECT DISTINCT p.product_id FROM `" . DB_PREFIX . "product` p LEFT JOIN `" . DB_PREFIX . "product_to_store` ps ON (ps.`product_id` = p.`product_id`) 
 																					   LEFT JOIN `" . DB_PREFIX . "product_description` pd ON (p.`product_id` = pd.`product_id`) 
 													  WHERE pd.`name` = '" . (string)$product_name . "' 
 													  AND  p.`model` = '" . (string)$product_model . "' 
 													  AND pd.`language_id` = '" . (int)$this->config->get('config_language_id') . "' 
 													  AND ps.store_id='{$store_id}'");
 
-		return $query->row;
+		return $query->row['product_id'] ?? '';
 	}
-
-
 
 	public function CheckCategoryId($category,$subcategory,$store_id) {
 		
@@ -234,7 +349,7 @@ class ModelApiProducts extends Model {
 		}else{
 			$ParentCategoryID =	$ParentCategoryID->row['category_id'];
 		}
-		
+		die($ParentCategoryID->row['category_id']);
 
 		if($subcategory == ''){ return $ParentCategoryID; }
 
@@ -266,7 +381,6 @@ class ModelApiProducts extends Model {
 
 		return $SubCategoryID;
 	}
-
 
 	public function getProducts($data = array()) {
 		$sql = "SELECT * FROM `" . DB_PREFIX . "product` p LEFT JOIN `" . DB_PREFIX . "product_description` pd ON (p.`product_id` = pd.`product_id`) WHERE pd.`language_id` = '" . (int)$this->config->get('config_language_id') . "'";
