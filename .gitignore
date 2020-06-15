@@ -61,6 +61,8 @@
 # IDE Project files
 /.idea
 /upload/.idea
-/upload/install
-/storeage
-/storage_oc
+
+/upload/config.php
+/upload/admin/config.php
+storeage
+storage_oc
