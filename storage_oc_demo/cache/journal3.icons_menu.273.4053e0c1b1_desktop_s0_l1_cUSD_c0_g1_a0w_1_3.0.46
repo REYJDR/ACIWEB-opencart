@@ -1,0 +1,197 @@
+<?php $val = array (
+  'css' => '.icons-menu-273 a::before{color:rgba(139, 145, 152, 1);font-size:28px}.icons-menu-273 .links-text{white-space:normal;overflow:visible;text-overflow:ellipsis;display:none}.icons-menu-273>ul>.icons-menu-item{padding:calc(10px / 2)}.icons-menu-tooltip-273 .tooltip-inner{font-size:12px;color:rgba(255, 255, 255, 1);background:rgba(58, 88, 173, 1);border-radius:2px;box-shadow:0 -15px 100px -10px rgba(0, 0, 0, 0.1)}.icons-menu-tooltip-273.tooltip.top .tooltip-arrow{border-top-color:rgba(58, 88, 173, 1)}.icons-menu-tooltip-273.tooltip.right .tooltip-arrow{border-right-color:rgba(58, 88, 173, 1)}.icons-menu-tooltip-273.tooltip.bottom .tooltip-arrow{border-bottom-color:rgba(58, 88, 173, 1)}.icons-menu-tooltip-273.tooltip.left .tooltip-arrow{border-left-color:rgba(58, 88, 173, 1)}.desktop .icons-menu-273 a:hover{box-shadow:0 10px 30px rgba(0, 0, 0, 0.1)}.icons-menu-273
+ul{justify-content:flex-end}.icons-menu-273 .module-title{text-align:right}.icons-menu-273 .module-title::after{left:100%;right:auto;transform:translate3d(-100%,0,0)}@media (max-width: 760px){.icons-menu-273
+ul{justify-content:center}.icons-menu-273 .module-title{text-align:center}.icons-menu-273 .module-title::after{left:50%;right:auto;transform:translate3d(-50%,0,0)}}.icons-menu-273 .icons-menu-item-1.icon-menu-icon>a::before{content:\'\\f1f0\' !important;font-family:icomoon !important}.icons-menu-273 .icons-menu-item-2.icon-menu-icon>a::before{content:\'\\f1f1\' !important;font-family:icomoon !important}.icons-menu-273 .icons-menu-item-3.icon-menu-icon>a::before{content:\'\\f1f4\' !important;font-family:icomoon !important}.icons-menu-273 .icons-menu-item-4.icon-menu-icon>a::before{content:\'\\f1f3\' !important;font-family:icomoon !important}.icons-menu-273 .icons-menu-item-5.icon-menu-icon>a::before{content:\'\\f1f2\' !important;font-family:icomoon !important}',
+  'fonts' => 
+  array (
+  ),
+  'settings' => 
+  array (
+    'schedule' => 
+    array (
+      'from' => '',
+      'to' => '',
+      'between' => true,
+    ),
+    'title' => '',
+    'tooltipStatus' => true,
+    'tooltipPosition' => 'top',
+    'imageDimensions' => 
+    array (
+      'width' => NULL,
+      'height' => NULL,
+      'resize' => 'fill',
+    ),
+    'status' => true,
+    'id' => 'icons-menu-5ee7dfc9f23fe',
+    'module_id' => 273,
+    'classes' => 
+    array (
+      0 => 'icons-menu',
+      1 => 'icons-menu-273',
+    ),
+    'items' => 
+    array (
+      1 => 
+      array (
+        'title' => 'Visa',
+        'link' => 
+        array (
+          'type' => 'custom',
+          'id' => '',
+          'href' => '#',
+          'name' => '',
+          'total' => NULL,
+          'attrs' => 
+          array (
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'type' => 'icon',
+        'classes' => 
+        array (
+          0 => 'menu-item',
+          1 => 'icons-menu-item',
+          2 => 'icons-menu-item-1',
+          'multi-level' => false,
+          'dropdown' => false,
+          'drop-menu' => false,
+          3 => 'icon-menu-icon',
+        ),
+        'items' => 
+        array (
+        ),
+      ),
+      2 => 
+      array (
+        'title' => 'Mastercart',
+        'link' => 
+        array (
+          'type' => 'custom',
+          'id' => '',
+          'href' => '#',
+          'name' => '',
+          'total' => NULL,
+          'attrs' => 
+          array (
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'type' => 'icon',
+        'classes' => 
+        array (
+          0 => 'menu-item',
+          1 => 'icons-menu-item',
+          2 => 'icons-menu-item-2',
+          'multi-level' => false,
+          'dropdown' => false,
+          'drop-menu' => false,
+          3 => 'icon-menu-icon',
+        ),
+        'items' => 
+        array (
+        ),
+      ),
+      3 => 
+      array (
+        'title' => 'Paypal',
+        'link' => 
+        array (
+          'type' => 'custom',
+          'id' => '',
+          'href' => '#',
+          'name' => '',
+          'total' => NULL,
+          'attrs' => 
+          array (
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'type' => 'icon',
+        'classes' => 
+        array (
+          0 => 'menu-item',
+          1 => 'icons-menu-item',
+          2 => 'icons-menu-item-3',
+          'multi-level' => false,
+          'dropdown' => false,
+          'drop-menu' => false,
+          3 => 'icon-menu-icon',
+        ),
+        'items' => 
+        array (
+        ),
+      ),
+      4 => 
+      array (
+        'title' => 'Amex',
+        'link' => 
+        array (
+          'type' => 'custom',
+          'id' => '',
+          'href' => '#',
+          'name' => '',
+          'total' => NULL,
+          'attrs' => 
+          array (
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'type' => 'icon',
+        'classes' => 
+        array (
+          0 => 'menu-item',
+          1 => 'icons-menu-item',
+          2 => 'icons-menu-item-4',
+          'multi-level' => false,
+          'dropdown' => false,
+          'drop-menu' => false,
+          3 => 'icon-menu-icon',
+        ),
+        'items' => 
+        array (
+        ),
+      ),
+      5 => 
+      array (
+        'title' => 'Discover',
+        'link' => 
+        array (
+          'type' => 'custom',
+          'id' => '',
+          'href' => '#',
+          'name' => '',
+          'total' => NULL,
+          'attrs' => 
+          array (
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'type' => 'icon',
+        'classes' => 
+        array (
+          0 => 'menu-item',
+          1 => 'icons-menu-item',
+          2 => 'icons-menu-item-5',
+          'multi-level' => false,
+          'dropdown' => false,
+          'drop-menu' => false,
+          3 => 'icon-menu-icon',
+        ),
+        'items' => 
+        array (
+        ),
+      ),
+    ),
+  ),
+);

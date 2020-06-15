@@ -1,0 +1,58 @@
+<?php $val = array (
+  'data' => 
+  array (
+    58 => 
+    array (
+      'php' => 
+      array (
+        'type' => 'custom',
+        'position' => 'image',
+        'positionTablet' => '',
+        'positionPhone' => '',
+        'blockType' => 'grid',
+      ),
+      'js' => 
+      array (
+      ),
+      'fonts' => 
+      array (
+      ),
+      'css' => NULL,
+    ),
+    248 => 
+    array (
+      'php' => 
+      array (
+        'type' => 'custom',
+        'position' => 'top',
+        'positionTablet' => '',
+        'positionPhone' => '',
+        'blockType' => 'grid',
+      ),
+      'js' => 
+      array (
+      ),
+      'fonts' => 
+      array (
+      ),
+      'css' => '.product-blocks-248{order:-10}#content .product-blocks-248{background:rgba(255, 253, 245, 1);padding:10px;border-width:1px;border-style:solid;border-color:rgba(221, 221, 221, 1)}',
+    ),
+  ),
+  'all' => 
+  array (
+    58 => 58,
+  ),
+  'special' => 
+  array (
+  ),
+  'outofstock' => 
+  array (
+  ),
+  'custom' => 
+  array (
+    42 => 
+    array (
+      248 => 248,
+    ),
+  ),
+);

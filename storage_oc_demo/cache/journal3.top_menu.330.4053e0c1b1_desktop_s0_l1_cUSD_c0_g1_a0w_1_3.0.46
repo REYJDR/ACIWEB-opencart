@@ -1,0 +1,268 @@
+<?php $val = array (
+  'css' => '.top-menu-330>ul>.top-menu-item-1>a{text-align:left}.top-menu-330>ul>.top-menu-item-1>a>.links-text{display:block}.top-menu-330 > ul > .top-menu-item-1 > a .count-badge{position:relative}.top-menu-330 .j-menu li.top-menu-item-2>a::before{top:-1px}.top-menu-330>ul>.top-menu-item-2>a{text-align:left}.top-menu-330>ul>.top-menu-item-2>a>.links-text{display:block}.top-menu-330 > ul > .top-menu-item-2 > a .count-badge{position:relative}.top-menu-330>ul>.top-menu-item-3>a{text-align:left}.top-menu-330>ul>.top-menu-item-3>a>.links-text{display:block}.top-menu-330 > ul > .top-menu-item-3 > a .count-badge{position:relative}.top-menu-330>ul>.top-menu-item-4>a{text-align:left}.top-menu-330>ul>.top-menu-item-4>a>.links-text{display:block}.top-menu-330 > ul > .top-menu-item-4 > a .count-badge{position:relative}.top-menu-330>ul>.top-menu-item-8>a{text-align:left}.top-menu-330>ul>.top-menu-item-8>a>.links-text{display:block}.top-menu-330 > ul > .top-menu-item-8 > a .count-badge{position:relative}',
+  'fonts' => 
+  array (
+  ),
+  'settings' => 
+  array (
+    'scheduledStatus' => 
+    array (
+      'from' => '',
+      'to' => '',
+      'between' => true,
+    ),
+    'status' => true,
+    'id' => 'top-menu-5ee7dfc380f4a',
+    'module_id' => 330,
+    'classes' => 
+    array (
+      0 => 'top-menu',
+      1 => 'top-menu-330',
+    ),
+    'items' => 
+    array (
+      1 => 
+      array (
+        'title' => 'Home',
+        'link' => 
+        array (
+          'type' => 'page',
+          'id' => '',
+          'href' => 'http://opencart.test/',
+          'name' => '',
+          'total' => NULL,
+          'attrs' => 
+          array (
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'classes' => 
+        array (
+          0 => 'menu-item',
+          1 => 'top-menu-item',
+          2 => 'top-menu-item-1',
+          'multi-level' => false,
+          'dropdown' => false,
+          'drop-menu' => false,
+          'icon-only' => false,
+        ),
+        'items' => 
+        array (
+        ),
+      ),
+      2 => 
+      array (
+        'title' => 'About Us',
+        'link' => 
+        array (
+          'type' => 'information',
+          'id' => '4',
+          'href' => 'http://opencart.test/index.php?route=information/information&amp;information_id=4',
+          'name' => 'About Us',
+          'total' => NULL,
+          'attrs' => 
+          array (
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'classes' => 
+        array (
+          0 => 'menu-item',
+          1 => 'top-menu-item',
+          2 => 'top-menu-item-2',
+          'multi-level' => false,
+          'dropdown' => false,
+          'drop-menu' => false,
+          'icon-only' => false,
+        ),
+        'items' => 
+        array (
+        ),
+      ),
+      3 => 
+      array (
+        'title' => 'Blog',
+        'link' => 
+        array (
+          'type' => 'blog_home',
+          'id' => '7',
+          'href' => 'http://opencart.test/index.php?route=journal3/blog',
+          'name' => '',
+          'total' => NULL,
+          'attrs' => 
+          array (
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'classes' => 
+        array (
+          0 => 'menu-item',
+          1 => 'top-menu-item',
+          2 => 'top-menu-item-3',
+          'multi-level' => false,
+          'dropdown' => false,
+          'drop-menu' => false,
+          'icon-only' => false,
+        ),
+        'items' => 
+        array (
+        ),
+      ),
+      4 => 
+      array (
+        'title' => 'FAQ',
+        'link' => 
+        array (
+          'type' => 'information',
+          'id' => '7',
+          'href' => '',
+          'name' => '',
+          'total' => NULL,
+          'attrs' => 
+          array (
+            'target' => 'target="_blank"',
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'classes' => 
+        array (
+          0 => 'menu-item',
+          1 => 'top-menu-item',
+          2 => 'top-menu-item-4',
+          'multi-level' => false,
+          'dropdown' => true,
+          'drop-menu' => true,
+          'icon-only' => false,
+        ),
+        'items' => 
+        array (
+          5 => 
+          array (
+            'title' => 'Unlimited',
+            'link' => 
+            array (
+              'type' => 'page',
+              'id' => '',
+              'href' => 'http://opencart.test/index.php?route=product/compare',
+              'name' => '',
+              'total' => '{{ $compare }}',
+              'attrs' => 
+              array (
+              ),
+              'classes' => 
+              array (
+                0 => 'compare-badge',
+              ),
+            ),
+            'classes' => 
+            array (
+              0 => 'menu-item',
+              1 => 'top-menu-item-5',
+              'dropdown' => false,
+              'icon-only' => NULL,
+            ),
+            'items' => 
+            array (
+            ),
+          ),
+          6 => 
+          array (
+            'title' => 'Custom',
+            'link' => 
+            array (
+              'type' => '',
+              'id' => '',
+              'href' => '',
+              'name' => '',
+              'total' => NULL,
+              'attrs' => 
+              array (
+              ),
+              'classes' => 
+              array (
+              ),
+            ),
+            'classes' => 
+            array (
+              0 => 'menu-item',
+              1 => 'top-menu-item-6',
+              'dropdown' => false,
+              'icon-only' => NULL,
+            ),
+            'items' => 
+            array (
+            ),
+          ),
+          7 => 
+          array (
+            'title' => 'Menus',
+            'link' => 
+            array (
+              'type' => '',
+              'id' => '',
+              'href' => '',
+              'name' => '',
+              'total' => NULL,
+              'attrs' => 
+              array (
+              ),
+              'classes' => 
+              array (
+              ),
+            ),
+            'classes' => 
+            array (
+              0 => 'menu-item',
+              1 => 'top-menu-item-7',
+              'dropdown' => false,
+              'icon-only' => NULL,
+            ),
+            'items' => 
+            array (
+            ),
+          ),
+        ),
+      ),
+      8 => 
+      array (
+        'title' => 'Free Shipping Above $200',
+        'link' => 
+        array (
+          'type' => '',
+          'id' => '7',
+          'href' => '',
+          'name' => '',
+          'total' => NULL,
+          'attrs' => 
+          array (
+            'target' => 'target="_blank"',
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'classes' => 
+        array (
+          0 => 'menu-item',
+          1 => 'top-menu-item',
+          2 => 'top-menu-item-8',
+          'multi-level' => false,
+          'dropdown' => false,
+          'drop-menu' => false,
+          'icon-only' => false,
+        ),
+        'items' => 
+        array (
+        ),
+      ),
+    ),
+  ),
+);
