@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+	<name>TMD Point Of Sale</name>
+	<version>3.x.x</version>
+	<author>TMD(opencartextensions.in)</author>
+	<code>#TCF-2.3.x,2.2.0.0</code>
+	<link>http://opencartextensions.in/</link>
+	
+	<file path="admin/controller/common/login.php">		
+		<operation error="log">
+			<search><![CDATA[$this->load->language('common/login');]]></search>
+			<add position="after"><![CDATA[
+			/* xml */
+			$this->load->language('pos/login');
+			/* xml */]]></add>
+		</operation>
+		
+		<operation error="log">
+			<search><![CDATA[$this->response->redirect($this->request->post['redirect'] . '&user_token=' . $this->session->data['user_token']);]]></search>
+			<add position="replace" offset="2"><![CDATA[
+				$this->response->redirect($this->request->post['redirect'] . '&user_token=' . $this->session->data['user_token']);
+				} else {
+				/* xml */
+				$route = $this->request->get['route']; 
+				
+				if(isset($route) && $route=='pos/login'){
+					$this->response->redirect($this->url->link('pos/pos', 'user_token=' . $this->session->data['user_token'], true));	
+				} else {
+					$this->response->redirect($this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'], true));
+				
+				}
+				/* xml */]]></add>
+		</operation>
+		<operation error="log">
+			<search><![CDATA[$data['action'] = $this->url->link('common/login', '', true);]]></search>
+			<add position="after"><![CDATA[
+			/* xml */
+			$data['posaction'] = $this->url->link('pos/login', '', true);
+			/* xml */]]></add>
+		</operation>
+		
+		<operation error="log">
+			<search><![CDATA[$data['footer'] = $this->load->controller('common/footer');]]></search>
+			<add position="after"><![CDATA[
+				/* xml */
+		if (isset($this->request->get['route'])) {
+			$route = $this->request->get['route'];
+		} 
+		
+		if(isset($route) && $route=='pos/login') {		
+			$data['redirect'] ='';
+			$this->response->setOutput($this->load->view('pos/login', $data));
+			
+		} else {
+		/* xml */]]></add>
+		</operation>
+		<operation error="log">
+			<search><![CDATA[protected function validate() {]]></search>
+			<add position="after"><![CDATA[
+			/* xml */
+			if(!empty($this->request->post['poslogin']))
+			{
+			$this->session->data['posuser']=true;
+			}
+		/* xml */]]></add>
+		</operation>
+		
+		<operation error="log">
+			<search><![CDATA[$this->response->setOutput($this->load->view('common/login', $data));]]></search>
+			<add position="after"><![CDATA[
+			}
+			]]></add>
+		</operation>		
+	</file>
+	<file path="system/library/cart/user.php">
+		<operation error="log">
+			<search ><![CDATA[$user_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "user WHERE user_id = '" . (int)$this->session->data['user_id'] . "' AND status = '1'");]]></search>
+			<add position="replace"><![CDATA[
+			if(!empty($this->session->data['posuser']))
+			{
+				$user_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "pos_user WHERE user_id = '" . (int)$this->session->data['user_id'] . "' AND status = '1'");
+			}
+			else
+			{
+				$user_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "user WHERE user_id = '" . (int)$this->session->data['user_id'] . "' AND status = '1'");
+			}
+			]]></add>
+		</operation>
+		<operation error="log">
+			<search ><![CDATA[$this->user_group_id = $user_query->row['user_group_id'];]]></search>
+			<add position="replace"><![CDATA[
+			if(isset($user_query->row['user_group_id']))
+				{
+					$this->user_group_id = $user_query->row['user_group_id'];
+				}
+				if(isset($user_query->row['store_id']))
+				{
+				$this->session->data['store_id'] = $user_query->row['store_id'];
+				}
+			]]></add>
+		</operation>
+		<operation error="log">
+			<search ><![CDATA[$user_group_query = $this->db->query("SELECT permission FROM " . DB_PREFIX . "user_group WHERE user_group_id = '" . (int)$user_query->row['user_group_id'] . "'");]]></search>
+			<add position="replace" offset="2"><![CDATA[
+			if(!empty($this->session->data['posuser']))
+				{
+					$permissions = array();
+					$listfile[] ='pos/allcategory';
+					$listfile[] ='pos/cart';
+					$listfile[] ='pos/categorysearch';
+					$listfile[] ='pos/customerform';
+					$listfile[] ='pos/customerlist';
+					$listfile[] ='pos/orderlist';
+					$listfile[] ='pos/paynow';
+					$listfile[] ='pos/pos';
+					$listfile[] ='pos/posproduct';
+					$listfile[] ='pos/posproductlist';
+					$listfile[] ='pos/printinvoice';
+					$listfile[] ='pos/product';
+					$listfile[] ='pos/productinfo';
+					$listfile[] ='pos/subcategory';
+					$listfile[] ='pos/dashboardload';
+					$listfile[] ='pos/paynowcustomer';
+					$listfile[] ='possetting/setting';
+					$listfile[] ='pos/totalcash';
+					$listfile[] ='pos/totalsale';
+					$listfile[] ='common/header';
+					$listfile[] ='common/footer';
+					$listfile[] ='common/column_left';
+					$listfile[] ='event/theme';
+					$listfile[] ='event/compatibility';
+					
+					$permissions['access']=$listfile;
+					$permissions['modify']=$listfile;
+				}
+				else
+				{
+				$user_group_query = $this->db->query("SELECT permission FROM " . DB_PREFIX . "user_group WHERE user_group_id = '" . (int)$user_query->row['user_group_id'] . "'");
+
+				$permissions = json_decode($user_group_query->row['permission'], true);
+				}
+			]]></add>
+		</operation><operation error="log">
+			<search ><![CDATA[$user_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "user WHERE username = '" . $this->db->escape($username) . "' AND (password = SHA1(CONCAT(salt, SHA1(CONCAT(salt, SHA1('" . $this->db->escape($password) . "'))))) OR password = '" . $this->db->escape(md5($password)) . "') AND status = '1'");]]></search>
+			<add position="replace"><![CDATA[
+			if(isset($this->session->data['posuser']))
+		{
+		$user_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "pos_user WHERE username = '" . $this->db->escape($username) . "' AND (password = SHA1(CONCAT(salt, SHA1(CONCAT(salt, SHA1('" . $this->db->escape(htmlspecialchars($password, ENT_QUOTES)) . "'))))) OR password = '" . $this->db->escape(md5($password)) . "') AND status = '1'");
+		}
+		else
+		{
+		$user_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "user WHERE username = '" . $this->db->escape($username) . "' AND (password = SHA1(CONCAT(salt, SHA1(CONCAT(salt, SHA1('" . $this->db->escape(htmlspecialchars($password, ENT_QUOTES)) . "'))))) OR password = '" . $this->db->escape(md5($password)) . "') AND status = '1'");
+		}
+			]]></add>
+		</operation>
+	</file>
+	
+	<file path="admin/language/*/common/column_left.php">
+		<operation error="skip">
+			<search ><![CDATA[// Text]]></search>
+			<add position="after"><![CDATA[
+			//tmd
+				$_['text_pos']               = 'Pos';
+				$_['text_posproduct']        = 'Pos Product';
+				$_['text_posstore']          = 'Retail Store';
+				$_['text_posuser']           = 'Pos User';
+				$_['text_salereport']        = 'Sale Report';
+				$_['text_orderreport']       = 'Order Report';
+				$_['text_barcode']           = 'Inventory Barcode';
+				$_['text_possetting']        = 'Pos Setting';
+				$_['text_sale_report']        = 'Sale Report';
+				$_['text_productsale_report']= 'Product Sale Report';
+				$_['text_commission_report'] = 'Commission Report';
+				$_['text_pos_report'] = 'Pos Report';
+				$_['text_stockin'] = 'Stock In';
+				$_['text_forecastreport'] = 'Forecast Report';
+			//tmd	
+			]]></add>
+		</operation>
+	</file>
+	<file path="admin/controller/common/column_left.php">
+		<operation error="skip">
+			<search><![CDATA[// Catalog]]></search>
+			<add position="before"><![CDATA[$pos = array();
+			
+			if ($this->user->hasPermission('access', 'pos/pos')) {
+				$pos[] = array(
+					'name'	   => $this->language->get('text_pos'),
+					'href'     => $this->url->link('pos/pos', 'user_token=' . $this->session->data['user_token'], true),
+					'children' => array()		
+				);
+			}	
+			if ($this->user->hasPermission('access', 'possetting/setting')) {
+				$pos[] = array(
+					'name'	   => $this->language->get('text_possetting'),
+					'href'     => $this->url->link('possetting/setting', 'user_token=' . $this->session->data['user_token'], true),
+					'children' => array()		
+				);
+			}
+			
+			if ($this->user->hasPermission('access', 'possetting/stockin')) {
+				$pos[] = array(
+					'name'	   => $this->language->get('text_stockin'),
+					'href'     => $this->url->link('possetting/stockin', 'user_token=' . $this->session->data['user_token'], true),
+					'children' => array()		
+				);
+			}
+				
+			if ($this->user->hasPermission('access', 'possetting/user')) {
+				$pos[] = array(
+					'name'	   => $this->language->get('text_posuser'),
+					'href'     => $this->url->link('possetting/user', 'user_token=' . $this->session->data['user_token'], true),
+					'children' => array()		
+				);
+			}
+			
+		
+			 if ($this->user->hasPermission('access', 'possetting/product')) {
+				$pos[] = array(
+					'name'	   => $this->language->get('text_posproduct'),
+					'href'     => $this->url->link('possetting/product', 'user_token=' . $this->session->data['user_token'], true),
+					'children' => array()		
+				);
+			}
+			
+			
+			if ($this->user->hasPermission('access', 'possetting/barcode')) {
+				$pos[] = array(
+					'name'	   => $this->language->get('text_barcode'),
+					'href'     => $this->url->link('possetting/barcode', 'user_token=' . $this->session->data['user_token'], true),
+					'children' => array()		
+				);
+			}
+			$posreport=array();
+			if ($this->user->hasPermission('access', 'possetting/sale_report')) {
+				$posreport[] = array(
+					'name'	   => $this->language->get('text_sale_report'),
+					'href'     => $this->url->link('possetting/sale_report', 'user_token=' . $this->session->data['user_token'], true),
+					'children' => array()		
+				);
+			}
+						
+			if ($this->user->hasPermission('access', 'possetting/productsale_report')) {
+				$posreport[] = array(
+					'name'	   => $this->language->get('text_productsale_report'),
+					'href'     => $this->url->link('possetting/productsale_report', 'user_token=' . $this->session->data['user_token'], true),
+					'children' => array()		
+				);
+			}
+			
+			if ($this->user->hasPermission('access', 'possetting/commission_report')) {
+				$posreport[] = array(
+					'name'	   => $this->language->get('text_commission_report'),
+					'href'     => $this->url->link('possetting/commission_report', 'user_token=' . $this->session->data['user_token'], true),
+					'children' => array()		
+				);
+			}
+
+			if ($this->user->hasPermission('access', 'possetting/forecastreport')) {
+				$posreport[] = array(
+					'name'	   => $this->language->get('text_forecastreport'),
+					'href'     => $this->url->link('possetting/forecastreport', 'user_token=' . $this->session->data['user_token'], true),
+					'children' => array()		
+				);
+			}
+
+			$pos[] = array(
+				'name'	   => $this->language->get('text_pos_report'),
+				'href'     =>'',
+				'children' => $posreport	
+			);
+			
+			
+			if ($this->user->hasPermission('access', 'pos/pos')) {
+				$data['menus'][] = array(
+					'id'       => 'menu-pos',
+					'icon'	   => 'fa-shopping-cart', 
+					'name'	   => $this->language->get('text_pos'),
+					'href'     => '',
+					'children' => $pos
+				);		
+			}]]></add>
+		</operation>			
+	</file>	
+	<file path="admin/language/*/common/menu.php">
+		<operation error="skip">
+			<search ><![CDATA[// Text]]></search>
+			<add position="after"><![CDATA[
+			//tmd
+				$_['text_pos']               = 'Pos';
+			//tmd	
+			]]></add>
+		</operation>
+	</file>
+	<file path="admin/controller/common/menu.php">
+		<operation error="skip">
+			<search><![CDATA[$data['zone'] = $this->url->link('localisation/zone', 'user_token=' . $this->session->data['user_token'], true);]]></search>
+			<add position="after"><![CDATA[
+			$data['text_pos'] = $this->language->get('text_pos');
+			$data['pos'] = $this->url->link('pos/pos', 'user_token=' . $this->session->data['user_token'], true);
+			]]></add>
+		</operation>			
+	</file>	
+	<file path="admin/view/template/common/menu.tpl">
+		<operation error="log">
+			<search><![CDATA[<li id="extension"><a class="parent"><i class="fa fa-puzzle-piece fa-fw"></i> <span><?php echo $text_extension; ?></span></a>]]></search>
+			<add position="before"><![CDATA[<li id="pos"><a class="parent" href="<?php echo $pos; ?>"><i class="fa fa-shopping-cart fa-fw"></i> <span><?php echo $text_pos; ?></span></a></li>]]></add>
+		</operation>			
+	</file>
+	<file path="admin/controller/startup/startup.php">
+		<operation error="log">
+			<search><![CDATA[// Cart]]></search>
+			<add position="before"><![CDATA[// Pos
+		$this->registry->set('pos', new Cart\Pos($this->registry));]]></add>
+		</operation>			
+	</file>	
+	<file path="admin/model/customer/customer.php">
+		<operation error="log">
+			<search><![CDATA[public function deleteLoginAttempts($email) {]]></search>
+			<add position="before"><![CDATA[
+			public function getAllAddress($customer_id) {
+			$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "address WHERE customer_id = '" . $customer_id . "'");
+			return $query->row;
+			}
+	]]></add>
+		</operation>			
+	</file>
+	<file path="admin/language/*/customer/customer.php">
+		<operation error="skip">
+			<search ><![CDATA[// Entry]]></search>
+			<add position="after"><![CDATA[
+			//tmd
+				$_['column_telephone']      = 'Telephone';
+				$_['column_address']        = 'Address';
+			//tmd	
+			]]></add>
+		</operation>
+	</file>
+</modification>

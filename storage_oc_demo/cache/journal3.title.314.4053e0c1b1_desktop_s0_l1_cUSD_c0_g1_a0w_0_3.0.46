@@ -1,0 +1,48 @@
+<?php $val = array (
+  'css' => '.module-title-314{text-align:center}.module-title-314
+.subtitle{display:inline-block;font-size:16px;color:rgba(214, 214, 221, 1);max-width:900px}.module-title-314 .title-divider{display:block;max-width:50px;height:4px;background:rgba(226, 41, 61, 1);margin-top:15px;margin-bottom:15px;margin-left:auto;margin-right:auto;margin-left:auto;margin-right:auto}.module-title-314 .title-wrapper{text-align:center;text-align:center}.module-title-314
+h3{font-family:\'Oswald\';font-weight:400;font-size:30px}.module-title-314 .title-wrapper
+h3{color:rgba(255, 255, 255, 1)}.module-title-314 .title-wrapper::before{font-family:\'Great Vibes\';font-weight:400;font-size:130px;color:rgba(255, 255, 255, 1);margin-top:-50px;opacity:0.2;display:block}@media (max-width: 760px){.module-title-314 .title-wrapper::before{display:none}}',
+  'fonts' => 
+  array (
+    'fonts' => 
+    array (
+      'Oswald' => 
+      array (
+        400 => '400',
+      ),
+      'Great Vibes' => 
+      array (
+        400 => '400',
+      ),
+    ),
+    'subsets' => 
+    array (
+      'latin-ext' => 'latin-ext',
+    ),
+  ),
+  'settings' => 
+  array (
+    'schedule' => 
+    array (
+      'from' => '',
+      'to' => '',
+      'between' => true,
+    ),
+    'type' => 'custom',
+    'title' => 'What are people saying',
+    'subtitle' => 'Super flexible Testimonials module, just one out of more than 30 extensions included in Journal 3.',
+    'status' => true,
+    'id' => 'title-5ee7f7e6c8332',
+    'module_id' => 314,
+    'classes' => 
+    array (
+      0 => 'module',
+      1 => 'module-title',
+      2 => 'module-title-314',
+    ),
+    'items' => 
+    array (
+    ),
+  ),
+);

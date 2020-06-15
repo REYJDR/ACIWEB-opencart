@@ -1,0 +1,70 @@
+<?php $val = array (
+  'css' => 'div.links-menu-77 .title.module-title{font-family:\'Oswald\';font-weight:400;font-size:17px;color:rgba(51, 51, 51, 1);text-transform:uppercase;margin-bottom:15px;white-space:normal;overflow:visible;text-overflow:initial;text-align:left}div.links-menu-77 .title.module-title::after{display:none;margin-top:10px;left:initial;right:initial;margin-left:0;margin-right:auto;transform:none}div.links-menu-77 .title.module-title.page-title>span::after{display:none;margin-top:10px;left:initial;right:initial;margin-left:0;margin-right:auto;transform:none}div.links-menu-77 .title.module-title::after, div.links-menu-77 .title.module-title.page-title>span::after{width:50px;height:1px}div.links-menu-77 .module-body{padding-top:7px;display:block;justify-content:flex-start;;-webkit-overflow-scrolling:touch}div.links-menu-77 .menu-item{border-width:1px 0 0 0;flex-grow:0;width:auto}div.links-menu-77 .menu-item a .links-text{white-space:normal;font-size:13px;color:rgba(139, 145, 152, 1)}div.links-menu-77 .menu-item
+a{width:auto}div.links-menu-77 .count-badge{display:none}.phone footer  div.links-menu-77 .module-title::before{display:none}.phone footer  div.links-menu-77 .module-title+.module-body>li{display:flex}@media (max-width: 760px){div.links-menu-77 .menu-item{justify-content:center}div.links-menu-77 .menu-item
+a{justify-content:center}}',
+  'fonts' => 
+  array (
+    'fonts' => 
+    array (
+      'Oswald' => 
+      array (
+        400 => '400',
+      ),
+    ),
+    'subsets' => 
+    array (
+      'latin-ext' => 'latin-ext',
+    ),
+  ),
+  'settings' => 
+  array (
+    'schedule' => 
+    array (
+      'from' => '',
+      'to' => '',
+      'between' => true,
+    ),
+    'title' => '',
+    'status' => true,
+    'id' => 'links-menu-5ee7f7ee2395c',
+    'module_id' => 77,
+    'classes' => 
+    array (
+      0 => 'links-menu',
+      1 => 'links-menu-77',
+    ),
+    'items' => 
+    array (
+      1 => 
+      array (
+        'title' => 'Copyright © 2019, Your Store, All Rights Reserved',
+        'link' => 
+        array (
+          'type' => '',
+          'id' => '',
+          'href' => '',
+          'name' => '',
+          'total' => NULL,
+          'attrs' => 
+          array (
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'classes' => 
+        array (
+          0 => 'menu-item',
+          1 => 'links-menu-item',
+          2 => 'links-menu-item-1',
+          'multi-level' => false,
+          'dropdown' => false,
+          'drop-menu' => false,
+        ),
+        'items' => 
+        array (
+        ),
+      ),
+    ),
+  ),
+);

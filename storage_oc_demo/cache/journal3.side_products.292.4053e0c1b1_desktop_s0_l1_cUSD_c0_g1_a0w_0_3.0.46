@@ -1,0 +1,378 @@
+<?php $val = array (
+  'css' => '.module-side_products-292 .swiper-container{overflow:hidden}.module-side_products-292 .swiper-buttons{display:none;top:50%;width:calc(100% - (-15px * 2));margin-top:-10px}.module-side_products-292:hover .swiper-buttons{display:block}.module-side_products-292 .swiper-button-prev{left:0;right:auto;transform:translate(0, -50%)}.module-side_products-292 .swiper-button-next{left:auto;right:0;transform:translate(0, -50%)}.module-side_products-292 .swiper-buttons
+div{width:35px;height:35px;background:rgba(30, 46, 78, 1);border-width:4px;border-style:solid;border-color:rgba(255, 255, 255, 1);border-radius:50%}.module-side_products-292 .swiper-button-disabled{opacity:0}.module-side_products-292 .swiper-buttons div::before{content:\'\\e408\' !important;font-family:icomoon !important;color:rgba(255, 255, 255, 1)}.module-side_products-292 .swiper-buttons .swiper-button-next::before{content:\'\\e409\' !important;font-family:icomoon !important;color:rgba(255, 255, 255, 1)}.module-side_products-292 .swiper-buttons div:not(.swiper-button-disabled):hover{background:rgba(226, 41, 61, 1)}.module-side_products-292 .swiper-pagination{display:block;margin-bottom:-10px;left:50%;right:auto;transform:translateX(-50%)}.module-side_products-292
+.swiper{padding-bottom:15px}.module-side_products-292 .swiper-pagination-bullet{width:8px;height:8px;background-color:rgba(219, 232, 242, 1)}.module-side_products-292 .swiper-pagination>span+span{margin-left:8px}.desktop .module-side_products-292 .swiper-pagination-bullet:hover{background-color:rgba(226, 41, 61, 1)}.module-side_products-292 .swiper-pagination-bullet.swiper-pagination-bullet-active{background-color:rgba(226, 41, 61, 1)}.module-side_products-292 .swiper-pagination>span{border-radius:20px}.module-side_products-292 .nav-tabs > li > a, .module-side_products-292 .nav-tabs > li.active > a, .module-side_products-292 .nav-tabs > li.active > a:hover, .module-side_products-292 .nav-tabs>li.active>a:focus{font-family:\'Oswald\';font-weight:400;font-size:14px;color:rgba(255, 255, 255, 1);text-transform:uppercase}.module-side_products-292 .nav-tabs > li.active > a, .module-side_products-292 .nav-tabs > li.active > a:hover, .module-side_products-292 .nav-tabs>li.active>a:focus{color:rgba(255, 255, 255, 1)}.module-side_products-292 .nav-tabs>li{border-width:0;border-bottom-width:1px;border-style:solid;border-color:rgba(0, 0, 0, 0);flex-grow:0}.module-side_products-292 .nav-tabs>li.active::after{display:none;border-top-width:10px}.module-side_products-292 .nav-tabs>li>a{justify-content:center;white-space:nowrap;padding:0px;padding-bottom:10px}.module-side_products-292 .nav-tabs>li>a::before{font-size:18px}.module-side_products-292 .nav-tabs{display:flex;justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;;min-width:50px}.module-side_products-292 .nav-tabs>li:not(:last-child){margin-right:20px}.module-side_products-292 .mobile .nav-tabs{overflow-x:scroll}.module-side_products-292 .nav-tabs::-webkit-scrollbar{-webkit-appearance:none;height:1px;height:1px;width:1px}.module-side_products-292 .nav-tabs::-webkit-scrollbar-track{background-color:white}.module-side_products-292 .nav-tabs::-webkit-scrollbar-thumb{background-color:#999;background-color:rgba(233, 102, 49, 1)}.module-side_products-292 .tab-container::before{display:none}.module-side_products-292 .tab-content{padding-top:20px}.module-side_products-292 .tab-container{display:block}.module-side_products-292 .tab-container .nav-tabs{flex-direction:row}.module-side_products-292 .product-layout.swiper-slide{margin-right:0px;width:calc((100% - 0 * 0px) / 1 - 0.01px)}.module-side_products-292 .product-layout:not(.swiper-slide){padding:0px;width:calc(100% / 1 - 0.01px)}.one-column #content .module-side_products-292 .product-layout.swiper-slide{margin-right:0px;width:calc((100% - 0 * 0px) / 1 - 0.01px)}.one-column #content .module-side_products-292 .product-layout:not(.swiper-slide){padding:0px;width:calc(100% / 1 - 0.01px)}.two-column #content .module-side_products-292 .product-layout.swiper-slide{margin-right:0px;width:calc((100% - 0 * 0px) / 1 - 0.01px)}.two-column #content .module-side_products-292 .product-layout:not(.swiper-slide){padding:0px;width:calc(100% / 1 - 0.01px)}.side-column .module-side_products-292 .product-layout.swiper-slide{margin-right:0px;width:calc((100% - 0 * 0px) / 1 - 0.01px)}.side-column .module-side_products-292 .product-layout:not(.swiper-slide){padding:0px;width:calc(100% / 1 - 0.01px)}.module-side_products-292 .side-products-blocks>div{width:calc(100% / 2)}.module-side_products-292 .side-product{background:rgba(255, 255, 255, 1);border-radius:3px;padding:7px}.module-side_products-292 .product-layout:not(.swiper-slide)+div{margin-top:10px}.module-side_products-292 .side-product
+.image{width:25%}.module-side_products-292 .side-product
+.caption{width:calc(100% - 25%);padding-left:8px}.module-side_products-292 .side-product .quickview-button{display:inline-flex;visibility:hidden;opacity:0;left:50%;top:50%;transform:translate(-50%, -50%) scale(.85)}.module-side_products-292 .side-product .quickview-button
+.btn{padding:10px
+!important;border-radius:50% !important}.module-side_products-292 .side-product:hover .quickview-button{visibility:visible;opacity:1;left:50%;top:50%;transform:translate(-50%, -50%) scale(1)}.module-side_products-292 .side-product .btn-quickview{width:30px !important;height:30px !important}.module-side_products-292 .side-product .btn-quickview::before{content:\'\\ebef\' !important;font-family:icomoon !important;font-size:16px}.module-side_products-292 .side-product
+.name{display:block;margin-bottom:2px}.module-side_products-292 .side-product .name
+a{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:14px;line-height:1.3}.module-side_products-292 .side-product
+.price{display:flex;align-items:center;flex-direction:row;font-size:14px;color:rgba(51, 51, 51, 1);margin-bottom:2px}.module-side_products-292 .side-product .price-tax{font-size:12px;display:none}.module-side_products-292 .side-product .price-old{margin:0;order:2;font-size:13px;color:rgba(105, 105, 115, 1);text-decoration:line-through}.module-side_products-292 .side-product .price-new{margin:0
+5px 0 0;order:1;color:rgba(226, 41, 61, 1)}.module-side_products-292 .side-product
+.rating{display:flex;margin-top:2px;margin-bottom:3px;justify-content:flex-start}.module-side_products-292 .side-product .rating.no-rating{display:none}.module-side_products-292 .side-product .rating .fa-stack{font-size:10px;width:1.1em}.module-side_products-292 .side-product .button-group{display:flex;margin-left:-3px}.module-side_products-292 .side-product .btn-cart{display:inline-flex;margin-right:5px}.module-side_products-292 .side-product .btn-cart::before{font-size:14px;left:1px}.module-side_products-292 .side-product .btn-cart.btn, .module-side_products-292 .side-product .btn-cart.btn:visited{font-size:12px;color:rgba(51, 51, 51, 1);text-transform:none}.module-side_products-292 .side-product .btn-cart.btn{background:none;border-style:none;padding:3px;box-shadow:none}.module-side_products-292 .side-product .btn-cart.btn:hover{background:none !important}.module-side_products-292 .side-product .btn-cart.btn:active, .module-side_products-292 .side-product .btn-cart.btn:hover:active, .module-side_products-292 .side-product .btn-cart.btn:focus:active{background:none !important}.module-side_products-292 .side-product .btn-cart.btn:focus{background:none}.module-side_products-292 .side-product .btn-cart.btn.btn.disabled::after{font-size:20px}.module-side_products-292 .side-product .btn-wishlist{display:inline-flex;margin-right:5px}.module-side_products-292 .side-product .btn-wishlist::before{font-size:13px}.module-side_products-292 .side-product .btn-wishlist.btn, .module-side_products-292 .side-product .btn-wishlist.btn:visited{font-size:12px;color:rgba(51, 51, 51, 1);text-transform:none}.module-side_products-292 .side-product .btn-wishlist.btn{background:none;border-style:none;padding:3px;box-shadow:none}.module-side_products-292 .side-product .btn-wishlist.btn:hover{background:none !important}.module-side_products-292 .side-product .btn-wishlist.btn:active, .module-side_products-292 .side-product .btn-wishlist.btn:hover:active, .module-side_products-292 .side-product .btn-wishlist.btn:focus:active{background:none !important}.module-side_products-292 .side-product .btn-wishlist.btn:focus{background:none}.module-side_products-292 .side-product .btn-wishlist.btn.btn.disabled::after{font-size:20px}.module-side_products-292 .side-product .btn-compare{display:inline-flex}.module-side_products-292 .side-product .btn-compare::before{font-size:13px}.module-side_products-292 .side-product .btn-compare.btn, .module-side_products-292 .side-product .btn-compare.btn:visited{font-size:12px;color:rgba(51, 51, 51, 1);text-transform:none}.module-side_products-292 .side-product .btn-compare.btn{background:none;border-style:none;padding:3px;box-shadow:none}.module-side_products-292 .side-product .btn-compare.btn:hover{background:none !important}.module-side_products-292 .side-product .btn-compare.btn:active, .module-side_products-292 .side-product .btn-compare.btn:hover:active, .module-side_products-292 .side-product .btn-compare.btn:focus:active{background:none !important}.module-side_products-292 .side-product .btn-compare.btn:focus{background:none}.module-side_products-292 .side-product .btn-compare.btn.btn.disabled::after{font-size:20px}.module-side_products-292 .title.module-title{font-size:14px;margin-bottom:8px;white-space:normal;overflow:visible;text-overflow:initial}.module-side_products-292 .title.module-title::after{display:none;margin-top:7px}.module-side_products-292 .title.module-title.page-title>span::after{display:none;margin-top:7px}@media (max-width: 1024px){.module-side_products-292 .swiper-buttons{display:none !important}}@media (max-width: 760px){.module-side_products-292 .swiper-container{overflow:visible}}@media (max-width: 470px){.module-side_products-292 .side-product
+.image{width:100%}.module-side_products-292 .side-product
+.caption{width:100%;padding-top:8px;padding-left:0px}.module-side_products-292 .side-product{display:flex}}',
+  'fonts' => 
+  array (
+    'fonts' => 
+    array (
+      'Oswald' => 
+      array (
+        400 => '400',
+      ),
+    ),
+    'subsets' => 
+    array (
+      'latin-ext' => 'latin-ext',
+    ),
+  ),
+  'settings' => 
+  array (
+    'schedule' => 
+    array (
+      'from' => '',
+      'to' => '',
+      'between' => true,
+    ),
+    'sectionsDisplay' => 'blocks',
+    'sectionsDisplayTablet' => '',
+    'sectionsDisplayPhone' => '',
+    'carousel' => false,
+    'itemsPerRow' => 
+    array (
+      'c0' => 
+      array (
+        0 => 
+        array (
+          'items' => 1,
+          'spacing' => 0,
+        ),
+      ),
+      'c1' => 
+      array (
+        0 => 
+        array (
+          'items' => 1,
+          'spacing' => 0,
+        ),
+      ),
+      'c2' => 
+      array (
+        0 => 
+        array (
+          'items' => 1,
+          'spacing' => 0,
+        ),
+      ),
+      'sc' => 
+      array (
+        0 => 
+        array (
+          'items' => 1,
+          'spacing' => 0,
+        ),
+      ),
+    ),
+    'default' => 'dbb44c55-2938-4e89-8fc8-aa8d00111ca2',
+    'imageDimensions' => 
+    array (
+      'width' => 50,
+      'height' => 50,
+      'resize' => 'fit',
+    ),
+    'moduleSideProductQuickviewTooltipStatus' => true,
+    'moduleSideProductQuickviewTooltipPosition' => 'top',
+    'moduleSideProductRatingVisibility' => true,
+    'moduleSideProductCartTooltipStatus' => true,
+    'moduleSideProductCartTooltipPosition' => 'top',
+    'moduleSideProductWishlistTooltipStatus' => true,
+    'moduleSideProductWishlistTooltipPosition' => 'top',
+    'moduleSideProductCompareTooltipStatus' => true,
+    'moduleSideProductCompareTooltipPosition' => 'top',
+    'status' => true,
+    'id' => 'side_products-5ee7f7ec34337',
+    'module_id' => 292,
+    'classes' => 
+    array (
+      0 => 'module',
+      1 => 'module-side_products',
+      2 => 'module-side_products-292',
+      'carousel-mode' => false,
+      'isotope' => false,
+    ),
+    'image_width' => 50,
+    'image_height' => 50,
+    'image_resize' => 'fit',
+    'carouselOptions' => 
+    array (
+      'speed' => 500,
+      'autoplay' => 
+      array (
+        'delay' => 3000,
+      ),
+      'pauseOnHover' => true,
+      'loop' => false,
+    ),
+    'text_tax' => 'Ex Tax:',
+    'button_cart' => 'Add to Cart',
+    'button_wishlist' => 'Add to Wish List',
+    'button_compare' => 'Compare this Product',
+    'default_index' => 1,
+    'items' => 
+    array (
+      1 => 
+      array (
+        'title' => 'Specials',
+        'filter' => 
+        array (
+          'sort' => 'p.sort_order',
+          'order' => 'ASC',
+          'start' => 0,
+          'limit' => 4,
+          'preset' => 'special',
+          'special' => true,
+        ),
+        'id' => '292-1',
+        'classes' => 
+        array (
+          0 => 'module-item',
+          1 => 'module-item-1',
+          'tab-pane' => false,
+          'panel' => false,
+          'swiper-slide' => false,
+        ),
+        'tab_classes' => 
+        array (
+          0 => 'tab-1',
+        ),
+        'panel_classes' => 
+        array (
+          0 => 'panel-collapse',
+          1 => 'collapse',
+        ),
+        'products' => 
+        array (
+          42 => 
+          array (
+            'classes' => 
+            array (
+              'swiper-slide' => false,
+              'isotope-item' => false,
+              0 => '',
+            ),
+            'quantity' => '990',
+            'stock_status' => 'Out Of Stock',
+            'thumb2x' => 'http://opencart.test/image/cache/catalog/demo/apple_cinema_30-100x100w.jpg',
+            'second_thumb' => false,
+            'second_thumb2x' => false,
+            'labels' => 
+            array (
+              29 => 
+              array (
+                'type' => 'custom',
+                'label' => 'New',
+                'display' => 'default',
+              ),
+              146 => 
+              array (
+                'type' => 'custom',
+                'label' => 'Online Only',
+                'display' => 'diagonal',
+              ),
+              233 => 
+              array (
+                'type' => 'special',
+                'label' => '-10 %',
+                'display' => 'default',
+              ),
+            ),
+            'extra_buttons' => 
+            array (
+              46 => 
+              array (
+                'type' => 'custom',
+                'label' => 'Buy Now',
+                'action' => 'quickbuy',
+                'link' => 
+                array (
+                  'type' => 'popup',
+                  'id' => '22',
+                  'href' => 'javascript:open_popup(22)',
+                  'name' => '',
+                  'total' => NULL,
+                  'attrs' => 
+                  array (
+                  ),
+                  'classes' => 
+                  array (
+                  ),
+                ),
+              ),
+              93 => 
+              array (
+                'type' => 'custom',
+                'label' => 'Ask Question',
+                'action' => 'link',
+                'link' => 
+                array (
+                  'type' => 'popup',
+                  'id' => '22',
+                  'href' => 'javascript:open_popup(22)',
+                  'name' => '',
+                  'total' => NULL,
+                  'attrs' => 
+                  array (
+                  ),
+                  'classes' => 
+                  array (
+                  ),
+                ),
+              ),
+            ),
+            'date_end' => NULL,
+            'price_value' => true,
+            'stat1' => NULL,
+            'stat2' => NULL,
+            'product_id' => '42',
+            'thumb' => 'http://opencart.test/image/cache/catalog/demo/apple_cinema_30-50x50w.jpg',
+            'name' => 'Apple Cinema 30&quot;',
+            'description' => 'The 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution. Designed specifically for the creative professional, this display provides more space for easier access to all the tools and palettes needed to edit, format and composite your work. Combine this display with a Mac ..',
+            'price' => '$122.00',
+            'special' => '$110.00',
+            'tax' => '$90.00',
+            'minimum' => '2',
+            'rating' => 0.0,
+            'href' => 'http://opencart.test/index.php?route=product/product&amp;product_id=42',
+          ),
+          30 => 
+          array (
+            'classes' => 
+            array (
+              'swiper-slide' => false,
+              'isotope-item' => false,
+              0 => '',
+            ),
+            'quantity' => '7',
+            'stock_status' => '2-3 Days',
+            'thumb2x' => 'http://opencart.test/image/cache/catalog/demo/canon_eos_5d_1-100x100w.jpg',
+            'second_thumb' => false,
+            'second_thumb2x' => false,
+            'labels' => 
+            array (
+              29 => 
+              array (
+                'type' => 'custom',
+                'label' => 'New',
+                'display' => 'default',
+              ),
+              233 => 
+              array (
+                'type' => 'special',
+                'label' => '-20 %',
+                'display' => 'default',
+              ),
+            ),
+            'extra_buttons' => 
+            array (
+              46 => 
+              array (
+                'type' => 'custom',
+                'label' => 'Buy Now',
+                'action' => 'quickbuy',
+                'link' => 
+                array (
+                  'type' => 'popup',
+                  'id' => '22',
+                  'href' => 'javascript:open_popup(22)',
+                  'name' => '',
+                  'total' => NULL,
+                  'attrs' => 
+                  array (
+                  ),
+                  'classes' => 
+                  array (
+                  ),
+                ),
+              ),
+              93 => 
+              array (
+                'type' => 'custom',
+                'label' => 'Ask Question',
+                'action' => 'link',
+                'link' => 
+                array (
+                  'type' => 'popup',
+                  'id' => '22',
+                  'href' => 'javascript:open_popup(22)',
+                  'name' => '',
+                  'total' => NULL,
+                  'attrs' => 
+                  array (
+                  ),
+                  'classes' => 
+                  array (
+                  ),
+                ),
+              ),
+            ),
+            'date_end' => NULL,
+            'price_value' => true,
+            'stat1' => NULL,
+            'stat2' => NULL,
+            'product_id' => '30',
+            'thumb' => 'http://opencart.test/image/cache/catalog/demo/canon_eos_5d_1-50x50w.jpg',
+            'name' => 'Canon EOS 5D',
+            'description' => 'Canon\'s press material for the EOS 5D states that it \'defines (a) new D-SLR category\', while we\'re not typically too concerned with marketing talk this particular statement is clearly pretty accurate. The EOS 5D is unlike any previous digital SLR in that it combines a full-frame (35 mm sized) high r..',
+            'price' => '$122.00',
+            'special' => '$98.00',
+            'tax' => '$80.00',
+            'minimum' => '1',
+            'rating' => 0.0,
+            'href' => 'http://opencart.test/index.php?route=product/product&amp;product_id=30',
+          ),
+        ),
+        'items' => 
+        array (
+        ),
+      ),
+      2 => 
+      array (
+        'title' => 'Trending',
+        'filter' => 
+        array (
+          'sort' => 'sales',
+          'order' => 'DESC',
+          'start' => 0,
+          'limit' => 4,
+          'preset' => 'bestseller',
+          'bestseller' => true,
+        ),
+        'id' => '292-2',
+        'classes' => 
+        array (
+          0 => 'module-item',
+          1 => 'module-item-2',
+          'tab-pane' => false,
+          'panel' => false,
+          'swiper-slide' => false,
+        ),
+        'tab_classes' => 
+        array (
+          0 => 'tab-2',
+        ),
+        'panel_classes' => 
+        array (
+          0 => 'panel-collapse',
+          1 => 'collapse',
+        ),
+        'products' => 
+        array (
+        ),
+        'items' => 
+        array (
+        ),
+      ),
+    ),
+  ),
+);
