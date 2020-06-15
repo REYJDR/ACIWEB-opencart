@@ -35,3 +35,4 @@ define('DIR_UPLOAD', DIR_SYSTEM . 'storage/upload/');
 require_once(DIR_SYSTEM . 'startup.php');
 
 start('install');
+

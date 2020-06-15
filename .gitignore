@@ -51,8 +51,8 @@
 # /upload/flags/*
 
 # If you want to ignore install file use following lines [on development mode]
-/upload/backup.install/*
-/upload/install/*
+# /upload/backup.install/*
+# /upload/install/*
 
 /tests/phpunit/vendor/*
 /tests/phpunit/composer.lock
@@ -61,7 +61,7 @@
 # IDE Project files
 /.idea
 /upload/.idea
-/upload/config.php
-/upload/admin/config.php
+
+# storage
 storeage
 storage_oc
